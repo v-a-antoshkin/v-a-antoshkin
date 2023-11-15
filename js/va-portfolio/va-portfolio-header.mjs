@@ -238,7 +238,7 @@ class VAPortfolioHeader extends PortfolioElement {
                 <div class="container">
                     <div class="m-header">
                         ${this.logo()}
-                        <portfolio-button name="bars" toggledname="xmark" border="0" color="#f7cf00" @click=${this.showMenu} size="36"></portfolio-button></portfolio-button>
+                        <toggle-button name="bars" toggledname="xmark" border="0" color="#f7cf00" @click=${this.showMenu} size="36"></toggle-button>
                     </div>
                     <nav class="horizontal${this.isShow ? ' show' : ''}">
                         <ul>
