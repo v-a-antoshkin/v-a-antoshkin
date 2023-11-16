@@ -1,6 +1,10 @@
-import { PortfolioElement, html, css } from '../portfolio-element.mjs'
+import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
 
-class VAPortfolioSection2 extends PortfolioElement {
+import '../../../../components/button/toggle-button.mjs';
+
+import { vaPortfolioStyles } from '../../va-portfolio-css.mjs';
+
+class HomeSection7 extends PortfolioElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -15,13 +19,18 @@ class VAPortfolioSection2 extends PortfolioElement {
 
     static get styles() {
         return [
+            vaPortfolioStyles,
             css`
                 :host {
                     display: flex;
                     position: relative;
+                    height: 455px;
                     justify-content: center;
                     align-items: center;
-                    background-color: var(--background-green);
+                    background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("images/bg1.jpg");
+                    background-position: 50% 50%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
                     box-sizing: border-box;
                     -webkit-touch-callout: none;
                     -webkit-user-select: none;
@@ -35,25 +44,26 @@ class VAPortfolioSection2 extends PortfolioElement {
                     box-sizing: border-box;
                 }
 
+
                 .container {
                     display: flex;
                     position: relative;
                     justify-content: space-between;
+                    flex-direction: column;
                     padding: 0 10px;
-                    margin-top: 65px;
-                    margin-bottom: 65px;
                 }
 
                 .container-layout {
-
+                    display: flex;
+                    justify-content: space-between;
                 }
 
-                h4 {
-                    margin: 20px 20px 0;
+                h3 {
+                    margin: 0;
                     font-family: var(--ubuntu-font-family);
-                    font-weight: 700;
+                    font-weight: 300;
                     line-height: 1.2;
-                    font-size: 20px;
+                    font-size: 30px;
                 }
 
                 p {
@@ -64,8 +74,6 @@ class VAPortfolioSection2 extends PortfolioElement {
                     word-wrap: break-word;
                     position: relative;
                     text-align: left;
-                    margin: 20px;
-                    font-style: italic;
                 }
 
                 .horizontal-line {
@@ -75,9 +83,9 @@ class VAPortfolioSection2 extends PortfolioElement {
                     background-color: var(--nav-item-active-background-color);
                 }
 
-                @media (max-width: 1000px) {
-                    .container {
-                        flex-wrap: wrap;
+                @media (max-width: 320px) {
+                    .horizontal-line {
+                        display: none;
                     }
                 }
             `
@@ -92,25 +100,10 @@ class VAPortfolioSection2 extends PortfolioElement {
     render() {
         return html`
             <div class="container">
+                <h3>Seven reasons why you need me</h3>
                 <div class="container-layout">
-                    <h4>1. Dino T-Rex Game</h4>
-                    <p>The Internet of Things has long been talked about amongst tech insiders as the next big innovation in home technology.</p>
-                </div>
-                <div class="container-layout">
-                    <h4>2. Crazy Racoon</h4>
-                    <p>While large-scale innovation in automation has traditionally been limited to the production side of society</p>
-                </div>
-                <div class="container-layout">
-                    <h4>3. А bird in a cage</h4>
-                    <p>After Bitcoin’s meteoric price jump in 2017, major tech players have begun to take cryptocurrencies seriously</p>
-                </div>
-                <div class="container-layout">
-                    <h4>4. Polyathlon</h4>
-                    <p>Blockchain, the decentralized ledger that holds together cryptocurrencies, has applications reaching</p>
-                </div>
-                <div class="container-layout">
-                    <h4>5. Framework's competition</h4>
-                    <p>Artificial intelligence is seeing the light and applications of the technology are already being worked on</p>
+                    <div class="horizontal-line"></div>
+                    <p>1. I'm ​insanely intelligent.<br>2.&nbsp; I'm incredibly talented.<br>3. I'm attractive.<br>4. I learn instantly.&nbsp;<br>5. I'm useful.&nbsp;<br>6. I'm purposeful.&nbsp;<br>7. I suffer from low self-esteem.</p>
                 </div>
             </div>
         `;
@@ -129,4 +122,4 @@ class VAPortfolioSection2 extends PortfolioElement {
 
 }
 
-customElements.define("va-portfolio-section-2", VAPortfolioSection2);
+customElements.define("home-section-7", HomeSection7);

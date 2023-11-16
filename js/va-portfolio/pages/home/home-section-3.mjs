@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../portfolio-element.mjs'
+import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
 
-class VAPortfolioSection5 extends PortfolioElement {
+class HomeSection3 extends PortfolioElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -241,4 +241,4 @@ class VAPortfolioSection5 extends PortfolioElement {
 
 }
 
-customElements.define("va-portfolio-section-5", VAPortfolioSection5);
+customElements.define("home-section-3", HomeSection3);

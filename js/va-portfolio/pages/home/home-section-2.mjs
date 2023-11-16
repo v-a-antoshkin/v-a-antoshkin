@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../portfolio-element.mjs'
+import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
 
-class VAPortfolioSection4 extends PortfolioElement {
+class HomeSection2 extends PortfolioElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -211,7 +211,7 @@ class VAPortfolioSection4 extends PortfolioElement {
                         <h5>About me</h5>
                         <h2>I'm not<br>a Robot</h2>
                         <p>I love Kent Beck. I believe that the 40-hour work week is the best achievement of modern humanity. Come in and learn more about me, my mom, dad, siblings, kids, wifes, friends, grandparents, aunts and uncles, cousins, nieces and nephews, godmother and godfather, etc.</p>
-                        <a href="https://www.popularmechanics.com/technology/robots/a23846041/robot-clean-your-room/" title="robots" target="_blank">COME IN</a>
+                        <a href="#about-me">COME IN</a>
                     </div>
                 </div>
                 <div class="layout-right">
@@ -236,4 +236,4 @@ class VAPortfolioSection4 extends PortfolioElement {
 
 }
 
-customElements.define("va-portfolio-section-4", VAPortfolioSection4);
+customElements.define("home-section-2", HomeSection2);
