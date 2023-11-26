@@ -51,13 +51,6 @@ class HomeSection5 extends PortfolioElement {
     align-items: center;
                 }
 
-                .image-right-container {
-                    // background-image: url(images/cellbg2.jpg);
-                    // background-repeat: no-repeat;
-                    // background-position: 0% 50%;
-                    // background-size: cover;
-                    // border-radius: 50%;
-                }
 
                 .image-left {
                     object-position: 50% 50%;
@@ -93,7 +86,7 @@ class HomeSection5 extends PortfolioElement {
                 }
 
                 .image-left-container {
-                    background-image: url("images/bg.jpg");
+                    background-image: url("images/home/bgs5.avif");
                     background-repeat: no-repeat;
                     background-position: 0% 50%;
                     background-size: cover;
@@ -131,7 +124,7 @@ class HomeSection5 extends PortfolioElement {
                     font-size: 20px;
                 }
 
-                h2 {
+                h3 {
                     font-size: 3.75rem;
                     font-weight: 300;
                     line-height: 1.2;
@@ -139,7 +132,7 @@ class HomeSection5 extends PortfolioElement {
                     font-family: var(--ubuntu-font-family);
                 }
 
-                h5 {
+                h2 {
                     font-weight: 300;
                     line-height: 1.2;
                     font-size: 1.25rem;
@@ -182,7 +175,7 @@ class HomeSection5 extends PortfolioElement {
                     width: 120px;
                     height: 6px;
                     margin-top: 24px;
-                    background-color: var(--nav-item-active-background-color);
+                    background-color: var(--native-background-color);
                 }
             `
         ]
@@ -199,15 +192,15 @@ class HomeSection5 extends PortfolioElement {
 
                 <div class="layout-left">
                     <div class="image-left-container">
-                        <img class="image-left" src="images/Untitled5.jpg" alt="">
+                        <img class="image-left" src="images/home/robot-2.avif" alt="">
                     </div>
-                    <img class="image-left-1" src="images/Untitled8.jpg" alt="">
+                    <img class="image-left-1" src="images/home/bgs5-left.avif" alt="">
 
                 </div>
                 <div class="layout-right">
                     <div class="layout-middle">
-                        <h5>My courses</h5>
-                        <h2>I'm a good teacher</h2>
+                        <h2>My courses</h2>
+                        <h3>I'm a good teacher</h3>
                         <p>The best way to understand yourself is to explain it to someone else</p>
                         <a href="https://www.popularmechanics.com/technology/robots/a23846041/robot-clean-your-room/" title="robots" target="_blank">Explain it</a>
                     </div>

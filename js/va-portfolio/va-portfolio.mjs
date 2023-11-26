@@ -4,19 +4,18 @@ import './va-portfolio-header.mjs';
 import './va-portfolio-footer.mjs';
 
 import './pages/home/home.mjs'
-
-import { vaPortfolioStyles } from './va-portfolio-css.mjs';
+// import './pages/about-me/about-me.mjs'
 
 class VAPortfolio extends PortfolioElement {
     static get properties() {
         return {
             version: { type: String, default: '1.0.0', save: true, category: 'settings' },
+
         }
     }
 
     static get styles() {
         return [
-            vaPortfolioStyles,
             css`
                 :host {
                     display: flex;
@@ -38,42 +37,36 @@ class VAPortfolio extends PortfolioElement {
     constructor() {
         super();
         this.version = "1.0.0";
-        this.pages = new Map();
-        this.pages.set('', 'home-page');
-        this.pages.set('#my-pride', 'my-pride');
-        this.pages.set('#about-me', 'about-me');
         addEventListener("hashchange", () => {this.requestUpdate()});
+        // this.lazyLoad = {};
+        // this.lazyLoad[Symbol.iterator] = function* () {
+        //     var index = 0;
+        //     while (true) {
+        //         console.log(index);
+        //         yield index++;
+        //     }
+        // }
     }
 
-    myPridePage() {
-        return html`
-            <main>
-                <va-portfolio-section-3></va-portfolio-section-3>
-                <va-portfolio-section-4></va-portfolio-section-4>
-                <va-portfolio-section-5></va-portfolio-section-5>
-                <va-portfolio-section-7></va-portfolio-section-7>
-                <va-portfolio-section-6></va-portfolio-section-6>
-                <va-portfolio-section-8></va-portfolio-section-8>
-                <va-portfolio-section-1></va-portfolio-section-1>
-                <va-portfolio-section-2></va-portfolio-section-2>
-            </main>
-        `;
+    get pageName() {
+        return location.hash.startsWith('#') ? location.hash.slice(1) : location.hash || 'home-page';
     }
 
-
-    aboutMePage() {
-        return html`
-            <main>
-                <va-portfolio-section-1></va-portfolio-section-1>
-                <va-portfolio-section-2></va-portfolio-section-2>
-            </main>
-        `;
+    * lazyLoad() {
+        const lazyPages=['about-me'];
+        for (const pageName of lazyPages) {
+            import(`./pages/${pageName}/${pageName}.mjs`);
+            yield pageName;
+        }
     }
 
     render() {
-        const page = document.createElement(this.pages.get(location.hash));
+        if (!window.customElements.get(this.pageName)) {
+            import(`./pages/${this.pageName}/${this.pageName}.mjs`);
+        }
+        const page = document.createElement(this.pageName);
         return html`
-            <va-portfolio-header></va-portfolio-header>
+            <va-portfolio-header active-page="${this.pageName}"></va-portfolio-header>
             <main>
                 ${page}
             </main>
@@ -83,6 +76,8 @@ class VAPortfolio extends PortfolioElement {
 
     firstUpdated() {
         super.firstUpdated();
+        const lazyIterator = this.lazyLoad();
+        setInterval(() => lazyIterator.next(), 2000);
     }
 }
 

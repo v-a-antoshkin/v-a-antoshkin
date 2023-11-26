@@ -116,7 +116,7 @@ class HomeSection3 extends PortfolioElement {
                     font-size: 20px;
                 }
 
-                h2 {
+                h3 {
                     font-size: 3.75rem;
                     font-weight: 300;
                     line-height: 1.2;
@@ -124,7 +124,7 @@ class HomeSection3 extends PortfolioElement {
                     font-family: var(--ubuntu-font-family);
                 }
 
-                h5 {
+                h2 {
                     font-weight: 300;
                     line-height: 1.2;
                     font-size: 1.25rem;
@@ -167,7 +167,7 @@ class HomeSection3 extends PortfolioElement {
                     width: 120px;
                     height: 6px;
                     margin-top: 24px;
-                    background-color: var(--nav-item-active-background-color);
+                    background-color: var(--native-background-color);
                 }
 
                 @media (max-width: 1100px) {
@@ -213,13 +213,13 @@ class HomeSection3 extends PortfolioElement {
         return html`
             <div class="container">
                 <div class="layout-right">
-                    <img class="image-right-1" src="images/34.jpg" alt="">
-                    <img class="image-right-2" src="images/cellbg3.jpg" alt="">
+                    <img class="image-right-1" src="images/home/robot-3.avif" alt="">
+                    <img class="image-right-2" src="images/home/bgs2-right.avif" alt="">
                 </div>
                 <div class="layout-left">
                     <div class="layout-middle">
-                        <h5>My technology stack</h5>
-                        <h2>Everybody knows...</h2>
+                        <h2>My technology stack</h2>
+                        <h3>Everybody knows...</h3>
                         <p>Everybody knows that Javascript is loaded<br>Everybody writes code with their fingers crossed<br>Everybody knows the C# is over<br>Everybody knows the&nbsp;С++ was lost<br>Everybody knows the Python was fixed<br>The dirty code stay poor, the clear code gets rich<br>That's how&nbsp;programming goes<br>Everybody knows...<br></p>
                         <a href="https://www.popularmechanics.com/technology/robots/a23846041/robot-clean-your-room/" title="robots" target="_blank">KNOW MORE</a>
                     </div>

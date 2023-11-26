@@ -1,8 +1,9 @@
 // lit: 2.0.0
 import { LitElement } from 'https://unpkg.com/lit@2.0.0/index.js?module';
-export * from 'https://unpkg.com/lit@2.0.0/index.js?module';
-export { styleMap } from 'https://unpkg.com/lit@2.0.0/directives/style-map.js?module';
-export { unsafeHTML } from 'https://unpkg.com/lit@2.0.0/directives/unsafe-html.js?module';
+export {html, css, svg} from 'https://unpkg.com/lit@2.0.0/index.js?module';
+// export {html, css}* from 'https://unpkg.com/lit@2.0.0/index.js?module';
+// export { styleMap } from 'https://unpkg.com/lit@2.0.0/directives/style-map.js?module';
+// export { unsafeHTML } from 'https://unpkg.com/lit@2.0.0/directives/unsafe-html.js?module';
 
 import { ulid, decodeTime } from './utils.js';
 import './icaro.js';
@@ -37,8 +38,6 @@ export class PortfolioElement extends LitElement {
         }
         const name = this.localName.replace('lit-', '');
         this.$url = `${urlRRL.replace('rrl-element.mjs', '')}${name}.js`;
-        console.log(this.$url);
-        console.log(urlRRL);
 
         this.$ulid = this.$ulid || RRL.ulid();
         if (this._useInfo) this.$urlInfo = `${urlRRL.replace('rrl-element.mjs', '')}/${name}/$info/$info.js`;
@@ -83,7 +82,7 @@ export class PortfolioElement extends LitElement {
         if (RRL.$$ && this.__globals) RRL.$$.unlisten(this.fnGlobals);
         super.disconnectedCallback();
     }
-    
+
     _initBus() {
         if (this.$partid || this.$properties.get('$partid') || (!this.$$ && (this.$properties.get('_partid') || this.__saves || !this.$root || this.__locals || this.__globals))) {
             this._partid = this.$partid || this._partid || this.id || this.localName;
@@ -101,14 +100,6 @@ export class PortfolioElement extends LitElement {
 
     fnUpdate = (e) => {
         this.requestUpdate();
-        // if (RRL._$update) {
-        //     ++this.$$.__update;
-        //     RRL.debounce('_$update', () => {
-        //         console.log('_$update', 'requestUpdate', this.$$.__update, 'changed', this.$$.__changed);
-        //         this.$$.__update = 0;
-        //         this.$$.__changed = 0;
-        //     }, 100);
-        // }
     }
     fnLocals = (e) => { if (this.__locals) this.__locals.forEach(i => { if (e.has(i)) this[i] = e.get(i) }) }
     fnGlobals = (e) => { if (this.__globals) this.__globals.forEach(i => { if (e.has(i)) this[i] = e.get(i) }) }

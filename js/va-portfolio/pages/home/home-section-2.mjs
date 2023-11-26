@@ -59,7 +59,7 @@ class HomeSection2 extends PortfolioElement {
                 }
 
                 .image-right-container {
-                    background-image: url(images/cellbg3.jpg);
+                    background-image: url(images/home/bgs2-right.avif);
                     background-repeat: no-repeat;
                     background-position: 0% 50%;
                     background-size: cover;
@@ -110,19 +110,19 @@ class HomeSection2 extends PortfolioElement {
                 }
 
                 h2 {
-                    font-size: 3.75rem;
-                    font-weight: 300;
-                    line-height: 1.2;
-                    margin: 25px 0 0;
-                    font-family: var(--ubuntu-font-family);
-                }
-
-                h5 {
                     font-weight: 300;
                     line-height: 1.2;
                     font-size: 1.25rem;
                     font-family: var(--ubuntu-font-family);
                     margin: 79px 0 0;
+                }
+
+                h3 {
+                    font-size: 3.75rem;
+                    font-weight: 300;
+                    line-height: 1.2;
+                    margin: 25px 0 0;
+                    font-family: var(--ubuntu-font-family);
                 }
 
                 p {
@@ -160,7 +160,7 @@ class HomeSection2 extends PortfolioElement {
                     width: 120px;
                     height: 6px;
                     margin-top: 24px;
-                    background-color: var(--nav-item-active-background-color);
+                    background-color: var(--native-background-color);
                 }
 
                 @media (max-width: 1100px) {
@@ -206,17 +206,17 @@ class HomeSection2 extends PortfolioElement {
         return html`
             <div class="container">
                 <div class="layout-left">
-                    <img class="image-left" src="images/2.jpg" alt="">
+                    <img class="image-left" src="images/home/bgs2-left.avif" alt="">
                     <div class="layout-middle">
-                        <h5>About me</h5>
-                        <h2>I'm not<br>a Robot</h2>
+                        <h2>About me</h2>
+                        <h3>I'm not<br>a Robot</h3>
                         <p>I love Kent Beck. I believe that the 40-hour work week is the best achievement of modern humanity. Come in and learn more about me, my mom, dad, siblings, kids, wifes, friends, grandparents, aunts and uncles, cousins, nieces and nephews, godmother and godfather, etc.</p>
                         <a href="#about-me">COME IN</a>
                     </div>
                 </div>
                 <div class="layout-right">
                     <div class="image-right-container">
-                        <img class="image-right" src="images/robot2.jpg" alt="">
+                        <img class="image-right" src="images/home/robot-1.avif" alt="">
                     </div>
                 </div>
             </div>

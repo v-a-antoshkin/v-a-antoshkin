@@ -138,7 +138,7 @@ class HomeSection6 extends PortfolioElement {
                     font-size: 20px;
                 }
 
-                h2 {
+                h3 {
                     font-size: 3.75rem;
                     font-weight: 300;
                     line-height: 1.2;
@@ -146,7 +146,7 @@ class HomeSection6 extends PortfolioElement {
                     font-family: var(--ubuntu-font-family);
                 }
 
-                h5 {
+                h2 {
                     font-weight: 300;
                     line-height: 1.2;
                     font-size: 1.25rem;
@@ -189,7 +189,7 @@ class HomeSection6 extends PortfolioElement {
                     width: 120px;
                     height: 6px;
                     margin-top: 24px;
-                    background-color: var(--nav-item-active-background-color);
+                    background-color: var(--native-background-color);
                 }
             `
         ]
@@ -205,16 +205,16 @@ class HomeSection6 extends PortfolioElement {
             <div class="container">
                 <div class="layout-left">
                     <div class="layout-middle">
-                        <h5>Catch me</h5>
-                        <h2>A few amazing ways to catch me</h2>
+                        <h2>Catch me</h2>
+                        <h3>A few amazing ways to catch me</h3>
                         <p>I've gathered five of the best, weirdest, and fastest ways to find me this year. You don't need to go to Las Vegas, Nevada or New York. You don't need to call Shanghai or Singapore. I'm just here, now and forever. </p>
                         <a href="https://www.popularmechanics.com/technology/robots/a23846041/robot-clean-your-room/" title="robots" target="_blank">Catch me</a>
                     </div>
                 </div>
                 <div class="layout-right">
-                    <img class="image-right-1" src="images/as.jpg" alt="">
-                    <img class="image-right-2" src="images/cellbg3.jpg" alt="">
-                    <img class="image-right-3" src="images/5236439-green.png" alt="">
+                    <img class="image-right-1" src="images/home/robot-4.avif" alt="">
+                    <img class="image-right-2" src="images/home/bgs2-right.avif" alt="">
+                    <img class="image-right-3" src="images/home/fishing-rod.avif" alt="">
                 </div>
             </div>
         `;

@@ -3,9 +3,6 @@ import { PortfolioElement, html, css } from '../portfolio-element.mjs'
 import '../../components/button/social-button.mjs';
 import '../../components/icon/icon.mjs';
 
-
-import { vaPortfolioStyles } from './va-portfolio-css.mjs';
-
 class VAPortfolioFooter extends PortfolioElement {
     static get properties() {
         return {
@@ -21,7 +18,6 @@ class VAPortfolioFooter extends PortfolioElement {
 
     static get styles() {
         return [
-            vaPortfolioStyles,
             css`
                 :host {
                     position: relative;
@@ -90,7 +86,7 @@ class VAPortfolioFooter extends PortfolioElement {
                 .logo {
                     border-radius: 50%;
                     color: var(--nav-item-active-color);
-                    background-color: var(--nav-item-active-background-color) !important;
+                    background-color: var(--native-background-color) !important;
                     line-height: 0;
                 }
 
@@ -98,6 +94,7 @@ class VAPortfolioFooter extends PortfolioElement {
                     object-fit: contain;
                     margin: 20px;
                     width: 80px;
+                    height: 80px;
                 }
 
                 h3 {
@@ -124,7 +121,7 @@ class VAPortfolioFooter extends PortfolioElement {
     logo() {
         return html`
             <div class="logo">
-                <img src="images/logo-black.png" alt="" />
+                <img src="images/logo-black.svg" alt="" />
             </div>
         `
     }

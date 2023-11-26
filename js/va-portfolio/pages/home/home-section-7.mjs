@@ -2,7 +2,6 @@ import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
 
 import '../../../../components/button/toggle-button.mjs';
 
-import { vaPortfolioStyles } from '../../va-portfolio-css.mjs';
 
 class HomeSection7 extends PortfolioElement {
     static get properties() {
@@ -19,7 +18,6 @@ class HomeSection7 extends PortfolioElement {
 
     static get styles() {
         return [
-            vaPortfolioStyles,
             css`
                 :host {
                     display: flex;
@@ -27,7 +25,7 @@ class HomeSection7 extends PortfolioElement {
                     height: 455px;
                     justify-content: center;
                     align-items: center;
-                    background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("images/bg1.jpg");
+                    background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url("images/home/bgs7.avif");
                     background-position: 50% 50%;
                     background-size: cover;
                     background-repeat: no-repeat;
@@ -58,7 +56,7 @@ class HomeSection7 extends PortfolioElement {
                     justify-content: space-between;
                 }
 
-                h3 {
+                h2 {
                     margin: 0;
                     font-family: var(--ubuntu-font-family);
                     font-weight: 300;
@@ -80,7 +78,7 @@ class HomeSection7 extends PortfolioElement {
                     width: 120px;
                     height: 6px;
                     margin-top: 24px;
-                    background-color: var(--nav-item-active-background-color);
+                    background-color: var(--native-background-color);
                 }
 
                 @media (max-width: 320px) {
@@ -100,7 +98,7 @@ class HomeSection7 extends PortfolioElement {
     render() {
         return html`
             <div class="container">
-                <h3>Seven reasons why you need me</h3>
+                <h2>Seven reasons why you need me</h2>
                 <div class="container-layout">
                     <div class="horizontal-line"></div>
                     <p>1. I'm ​insanely intelligent.<br>2.&nbsp; I'm incredibly talented.<br>3. I'm attractive.<br>4. I learn instantly.&nbsp;<br>5. I'm useful.&nbsp;<br>6. I'm purposeful.&nbsp;<br>7. I suffer from low self-esteem.</p>

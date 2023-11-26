@@ -46,7 +46,7 @@ class HomeSection1 extends PortfolioElement {
                     flex-basis: 50%;
                     position: relative;
                     justify-content: space-between;
-                    background-image: url(images/intror.jpg);
+                    background-image: url(images/home/robot-head.avif);
                     background-repeat: no-repeat;
                     background-position: -260px 100%;
                     min-height: 800px;
@@ -59,7 +59,7 @@ class HomeSection1 extends PortfolioElement {
                     justify-content: space-between;
                     align-items: center;
                     min-height: 800px;
-                    background-image: url(images/introbg.jpg);
+                    background-image: url(images/home/bgs1.avif);
                     background-repeat: no-repeat;
                     background-position: 0% 50%;
                     background-size: cover;
@@ -86,7 +86,7 @@ class HomeSection1 extends PortfolioElement {
                     font-family: var(--ubuntu-font-family);
                 }
 
-                h5 {
+                h2 {
                     font-weight: 300;
                     line-height: 1.2;
                     font-size: 1.25rem;
@@ -106,7 +106,8 @@ class HomeSection1 extends PortfolioElement {
                     text-transform: uppercase;
                     margin: 20px auto 0 0;
                     color: #ffffff !important;
-                    background-color: #17cad0 !important;
+                    background-color: #0F8080 !important;
+                    /*background-color: #17cad0 !important;*/
                     position: relative;
                     letter-spacing: 1px;
                     font-size: 1rem;
@@ -118,6 +119,7 @@ class HomeSection1 extends PortfolioElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
+                    font-weight: 500;
                 }
 
                 a:hover {
@@ -128,7 +130,7 @@ class HomeSection1 extends PortfolioElement {
                     width: 120px;
                     height: 6px;
                     margin-top: 24px;
-                    background-color: var(--nav-item-active-background-color);
+                    background-color: var(--native-background-color);
                 }
 
                 @media (max-width: 1100px) {
@@ -177,7 +179,7 @@ class HomeSection1 extends PortfolioElement {
                 <div class="layout-right">
                     <div class="layout-middle">
                         <div>
-                            <h5>Innovative programming</h5>
+                            <h2>Innovative programming</h2>
                             <h1>Reinforcement<br>learning<br>systems</h1>
                             <p>The future is already here. Аrtificial intelligence never sleeps and never gets bored</p>
                             <a href="#my-pride">Learn more</a>

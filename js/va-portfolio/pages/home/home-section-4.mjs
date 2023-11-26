@@ -37,7 +37,7 @@ class HomeSection4 extends PortfolioElement {
                 .container {
                     display: flex;
                     width: 100%;
-                    background-image: url(images/46.jpg);
+                    background-image: url(images/home/bgs4.avif);
                     background-size: 10%;
                     background-repeat: no-repeat;
                     padding: 5% 0 15%;
@@ -151,7 +151,7 @@ class HomeSection4 extends PortfolioElement {
                     overflow-wrap: anywhere;
                 }
 
-                h5 {
+                h3 {
                     font-weight: 300;
                     line-height: 1.2;
                     font-size: 1.25rem;
@@ -196,7 +196,7 @@ class HomeSection4 extends PortfolioElement {
                     width: 120px;
                     height: 6px;
                     margin-top: 24px;
-                    background-color: var(--nav-item-active-background-color);
+                    background-color: var(--native-background-color);
                 }
             `
         ]
@@ -212,17 +212,17 @@ class HomeSection4 extends PortfolioElement {
             <div class="container">
                 <div class="layout-left">
                     <div class="layout-middle">
-                        <img class="image-right-1 js" src="images/5968292.png" alt="">
+                        <img class="image-right-1 js" src="images/home/js-logo.svg"" alt="">
                         <h2>JavaScript</h2>
                         <p>With == I kind of guess,<br>but with === I'm really sure</p>
                     </div>
                     <div class="layout-middle">
-                        <img class="image-right-1" src="images/6132221.png" alt="">
+                        <img class="image-right-1" src="images/home/c-sharp-logo.svg" alt="">
                         <h2>C#</h2>
                         <p>I don't wear glasses</p>
                     </div>
                     <div class="layout-middle">
-                        <img class="image-right-1" src="images/5968350.png" alt="">
+                        <img class="image-right-1" src="images/home/python-logo.svg" alt="">
                         <h2>Python</h2>
                         <p>The Pythons is a BBC documentary film about the Monty Python team which was shot in Tunisia in 1978 during the making of Monty Python's Life of Brian.</p>
                     </div>

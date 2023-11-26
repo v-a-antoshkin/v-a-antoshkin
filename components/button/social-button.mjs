@@ -13,7 +13,7 @@ customElements.define('social-button', class SocialButton extends PortfolioEleme
             title: { type: String, default: '' },
             size: { type: Number, default: 46 },
 
-            backgroundColor: { type: String, default: 'var(--nav-item-active-background-color)' },
+            backgroundColor: { type: String, default: 'var(--native-background-color)' },
         }
     }
 

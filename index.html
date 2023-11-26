@@ -7,10 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="icon" type="images/svg" href="images/favicon.svg">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link rel="preload" href="css/style.css" as="style" />
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"> -->
+    <link rel="modulepreload" href="js/va-portfolio/va-portfolio-header.mjs">
+    <link rel="modulepreload" href="js/va-portfolio/va-portfolio-footer.mjs">
+    <link rel="preload" as="image" href="images/home/robot-head.avif">
+    <link rel="preload" as="image" href="images/home/bgs1.avif">
+
     <script type="module" src="js/va-portfolio/va-portfolio.mjs"></script>
+    <link rel="preload" href="css/font.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/fonts.css"></noscript>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="preload" href="/assets/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin> -->
     <!-- <script src="https://kit.fontawesome.com/8d8aed8a5d.js" crossorigin="anonymous"></script> -->
+    <!-- <style>
+            html * {
+        font-family: var(--open-font-family);
+    }
+body {
+    margin: 0;
+}
+:root {
+    --nav-item-color: #1a1a1a;
+    --nav-item-active-color: white;
+    --native-background-color: #f7cf00;
+    --nav-item-hover-color: white;
+    --nav-item-hover-background-color: #f9dd4b;
+    --footer-background-color: #333;
+    --footer-color: white;
+    --ubuntu-font-family: Ubuntu, sans-serif;
+    --open-font-family: 'Open Sans', sans-serif;
+    --background-green: #108484;
+    /* --background-green: #17cad0; */
+    --background-magenta: #d954db;
+    --background-gray: #e5e5e5;
+    --background-gray-light: #f2f2f2;
+    --background-color-4f4e5b: #4F4E5B;
+    /* 108484 */
+}
+    </style> -->
 </head>
 <body>
     <va-portfolio></va-portfolio>
