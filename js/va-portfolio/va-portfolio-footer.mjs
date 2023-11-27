@@ -1,7 +1,6 @@
 import { PortfolioElement, html, css } from '../portfolio-element.mjs'
 
 import '../../components/button/social-button.mjs';
-import '../../components/icon/icon.mjs';
 
 class VAPortfolioFooter extends PortfolioElement {
     static get properties() {
