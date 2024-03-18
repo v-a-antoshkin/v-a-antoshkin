@@ -45,7 +45,7 @@ class HomeSection8 extends BaseElement {
                 }
 
                 .container-layout {
-
+                    cursor: pointer;
                 }
 
                 h2 {
@@ -92,25 +92,21 @@ class HomeSection8 extends BaseElement {
     render() {
         return html`
             <div class="container">
-                <div class="container-layout">
+                <div class="container-layout" @click=${() => window.open('https://neuro-rsu.github.io/neuro-dino/', '_blank')}>
                     <h2>1. Dino T-Rex Game</h2>
-                    <p>The Internet of Things has long been talked about amongst tech insiders as the next big innovation in home technology.</p>
+                    <p>The famous dinosaur T-Rex runs through the scorched desert. Huge cacti and scary pterodactyls meet on his way. Artificial intelligence can help him survive in such terrible conditions</p>
                 </div>
-                <div class="container-layout">
+                <div class="container-layout" @click=${() => window.open('https://neuro-rsu.github.io/neuro-raccoon/', '_blank')}>
                     <h2>2. Crazy Racoon</h2>
-                    <p>While large-scale innovation in automation has traditionally been limited to the production side of society</p>
+                    <p>A crazy raccoon rides in the back of a red pickup truck. He is very hungry. He catches goldfish and eats them. Black fish kill him immediately. See how quickly artificial intelligence will learn to survive in such strange conditions</p>
                 </div>
-                <div class="container-layout">
-                    <h2>3. А bird in a cage</h2>
-                    <p>After Bitcoin’s meteoric price jump in 2017, major tech players have begun to take cryptocurrencies seriously</p>
+                <div class="container-layout" @click=${() => window.open('https://neuro-rsu.github.io/neuro-bun/', '_blank')}>
+                    <h2>3. Crazy Bun</h2>
+                    <p>A famous bun runs along a forest road. Grandfather, grandmother, hare, wolf, bear and fox are trying to catch him. See how artificial intelligence will help him escape from them.</p>
                 </div>
-                <div class="container-layout">
-                    <h2>4. Polyathlon</h2>
-                    <p>Blockchain, the decentralized ledger that holds together cryptocurrencies, has applications reaching</p>
-                </div>
-                <div class="container-layout">
-                    <h2>5. Framework's competition</h2>
-                    <p>Artificial intelligence is seeing the light and applications of the technology are already being worked on</p>
+                <div class="container-layout" @click=${() => window.open('https://neuro-rsu.github.io/crazy-birds/', '_blank')}>
+                    <h2>4. Crazy Birds</h2>
+                    <p>A flock of birds flies in a closed area at different speeds. They collide with walls and fly in the opposite direction. See how the universal mind will help them all get together again.</p>
                 </div>
             </div>
         `;
