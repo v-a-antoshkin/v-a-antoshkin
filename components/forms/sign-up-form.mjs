@@ -1,19 +1,20 @@
 
-import { PortfolioElement, html, css } from '../../js/portfolio-element.mjs';
+import { BaseElement, html, css } from '../../js/base-element.mjs';
 
 import { formStyles } from './form-css.mjs'
 
-//import { default as wsClient, sendMessage, setDialog, repairDialog, setForm} from '../../js/ws-client.mjs'
-
 import '../dialogs/modal-dialog.mjs';
 
-class SignUpForm extends PortfolioElement {
+import '../inputs/simple-input.mjs';
+import '../inputs/email-input.mjs';
+import '../inputs/password-input.mjs';
+import '../button/close-button.mjs';
+
+class SignUpForm extends BaseElement {
     static get properties() {
         return {
             version: { type: String, default: '1.0.0', save: true, category: 'settings' },
             opened: { type: Boolean, default: false, category: 'settings' },
-            login: { type: String, default: ''},
-            password: {type: String, default: ''}
         }
     }
 
@@ -23,6 +24,18 @@ class SignUpForm extends PortfolioElement {
             css`
                 :host {
                     user-select: none;
+                }
+                .icon-font-2.user {
+                    color: red;
+                    font-family: FontAwesome;
+                }
+                .icon-font-2.user::before {
+                    font-family: FontAwesome;
+                    content:"\f001";
+                }
+                .form-footer {
+                    display: flex;
+                    justify-content: right;
                 }
             `
         ]
@@ -43,69 +56,223 @@ class SignUpForm extends PortfolioElement {
                 <div class="form-header">
                     <div class="form-tabs no-select">
                         <div class="form-tab" selected>
-                            <span id="db-tab" class="form-tab-link select">Sing in</span>
+                            <span id="db-tab" class="form-tab-link select">Sign Up</span>
                         </div>
                     </div>
-                    <span id="close" class="close-button no-select" title="Закрыть"  @click=${()=>this.close()}>&times;</span>
+                    <close-button class="close-button no-select" name="times" @click=${()=>this.close('CANCEL')}></close-button>
                 </div>
 
                 <div class="form-body">
                     <div id="db-tab-section" class="form-tab-section selected">
-                        <label for="uname"><b>Пользователь</b></label>
-                        <input type="text" placeholder="Логин" name="username" .value=${this.login} @change=${this.updateLoginValue} required>
-
-                        <label for="password"><b>Password</b></label>
-                        <input type="password" placeholder="Пароль" name="password" .value=${this.password} @change=${this.updatePasswordValue} required>
-
-                        <label for="host"><b>Хост</b></label>
-                        <input type="text" placeholder="http://example.com" name="host" required>
-
-                        <label for="port"><b>Порт</b></label>
-                        <input type="text" placeholder="Порт: 5984" name="port" required>
-
-                        <button type="button" @click=${()=>this.sendLogin()}>Login</button>
-                    </div>
-                </div>
-
-                <div class="form-footer no-select">
-                    <div id="db-tab-buttons" class="footer-buttons-section">
-                        <div class="footer-buttons">
-                            <button type="button" name="clear" class="footer-button cancel-button">Очистить</button>
-                            <button type="button" name="delete" class="footer-button">Удалить</button>
-                            <button type="button" name="compact" class="footer-button">Сжать</button>
-                            <button type="button" name="download" class="footer-button">Скачать</button>
-                            <button type="button" name="upload" class="footer-button">Загрузить</button>
-                            <button type="button" name="close" class="footer-button">Закрыть</button>
+                        <simple-input id="login" icon-name="user" placeholder="Логин" label="Пользователь"></simple-input>
+                        <email-input id="email" icon-name="mail" placeholder="EMail" label="Почта" size="28"></email-input>
+                        <password-input id="password" label="Пароль" icon-name="password" visible-icon="eye-slash-regular" invisible-icon="eye-regular"></password-input>
+                        <div class="sign-up-options">
+                            <div class="checkbox-remember">
+                                <label for="remember"><b>Remember me</b></label>
+                                <input type="checkbox" id="remember" name="remember" @click=${this.RememberMe}>
+                            </div>
                         </div>
+
+                        <button type="button" @click=${()=>this.sendSimpleUser()}>Sign Up</button>
+                        <div id="google"></div>
                     </div>
                 </div>
+            </div>
             </form>
         </div>
         `;
     }
 
+    RememberMe(){
+        if (this.#rememberMe) {
+            localStorage.setItem('rememberMe', this.#rememberMe)
+        }
+        else {
+            localStorage.removeItem('rememberMe')
+        }
+    }
+
+    sendSimpleUser() {
+        const user = { username: this.#login, password: this.#password, type: 'simple', email: this.#email }
+        console.log(JSON.stringify(user))
+        let response = fetch('http://localhost:7000/api/sign-up', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(response => response.json())
+        .then(json => {
+            if (json.error) {
+                throw Error(json.error)
+            }
+            this.saveToken(json.token)
+            return json.token
+        })
+        .then(token => this.getSimpleUserInfo(token))
+        .catch(err => {console.error(err.message)});
+    }
+
+    sendGoogleUserToken(res) {
+        console.log(res)
+        const token = { token: res.credential, type: 'google'}
+        console.log(JSON.stringify(token))
+        let response = fetch('http://localhost:7000/api/sign-up', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(token)
+        })
+        .then(response => {
+            console.log(response.status)
+            return response.json()
+        })
+        .then(json => {
+            if (json.error) {
+                throw Error(json.error)
+            }
+            this.saveToken(json.token)
+            return json.token
+        })
+        .then(token => this.getUserInfo(token))
+        .catch(err => {console.error(err.message)});
+    }
+
+
+    getUserInfo(token) {
+        return fetch('http://localhost:7000/api/user?info=fle', {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(json => {
+            if (json.error) {
+                throw Error(json.error)
+            }
+            return json.user;
+        })
+        .then(user => this.saveUserInfo(JSON.stringify(user)))
+        .then(() => this.close('OK'))
+        .catch(err => {console.error(err.message)});
+    }
+
+    getSimpleUserInfo(token) {
+        return fetch('http://localhost:7000/api/user?info=fle', {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(json => {
+            if (json.error) {
+                throw Error(json.error)
+            }
+            return json.user;
+        })
+        .then(user => this.saveUserInfo(JSON.stringify(user)))
+        .then(() => this.close('OK'))
+        .catch(err => {console.error(err.message)});
+    }
+
+    saveUserInfo(userInfo) {
+        if (localStorage.getItem('rememberMe')) {
+            localStorage.setItem('userInfo', userInfo)
+        }
+        else {
+            sessionStorage.setItem('userInfo', userInfo)
+        }
+    }
+
+    async saveToken(token) {
+        if (localStorage.getItem('rememberMe')) {
+            localStorage.setItem('accessUserToken', token)
+        }
+        else {
+            sessionStorage.setItem('accessUserToken', token)
+        }
+    }
+
+    getTokenToSessionStorage(token) {
+        return sessionStorage.getItem('accessUserToken')
+    }
+
+    createGoogleButton() {
+        google.accounts.id.initialize({
+            client_id: '152529125992-enoddnchd7n8mug7he2juk5fh3fhevqe.apps.googleusercontent.com',
+            callback: res => this.sendGoogleUserToken(res)
+        });
+        google.accounts.id.renderButton(
+            this.renderRoot.querySelector('#google'),
+            { theme: 'outline', size: 'large'}
+        );
+    }
+
     firstUpdated() {
         super.firstUpdated();
+        this.createGoogleButton();
     }
 
-    neuroClick() {
-        // let cells = this.renderRoot.querySelectorAll(".cell");
-        // const id = Math.floor(Math.random() * cells.length);
-        // if (id != this.odd)
-        //     cells[id].dispatchEvent(new CustomEvent("click", { bubbles: true, composed: true}));
-    }
     open() {
         this.opened = true;
-        setDialog(this.renderRoot.querySelector('modal-dialog'))
-        setForm(this);
-    }
-    close() {
-        this.opened = false
-        repairDialog()
+        // setDialog(this.renderRoot.querySelector('modal-dialog'))
+        // setForm(this);
+        return new Promise((resolve, reject) => {
+            this.resolve = resolve
+            this.reject = reject
+        })
     }
 
-    sendLogin() {
-        sendMessage("login", {login: this.login, password: this.password})
+    close(modalResult) {
+        this.opened = false
+        this.#login = "";
+        this.#password = "";
+        this.#email = "";
+        this.#rememberMe = "";
+        // repairDialog()
+        this.resolve(modalResult)
+    }
+
+    get #login() {
+        return this.renderRoot?.querySelector('#login')?.value ?? null;
+    }
+
+    set #login(value) {
+        if (this.renderRoot?.querySelector('#login')) {
+            this.renderRoot.querySelector('#login').value = value;
+        }
+    }
+
+    get #password() {
+        return this.renderRoot?.querySelector('#password')?.value ?? null;
+    }
+
+    set #password(value) {
+        if (this.renderRoot?.querySelector('#password')) {
+            this.renderRoot.querySelector('#password').value = value;
+        }
+    }
+
+    get #email() {
+        return this.renderRoot?.querySelector('#email')?.value ?? null;
+    }
+
+    set #email(value) {
+        if (this.renderRoot?.querySelector('#email')) {
+            this.renderRoot.querySelector('#email').value = value;
+        }
+    }
+    get #rememberMe() {
+        return this.renderRoot?.querySelector('#remember')?.checked ?? null;
+    }
+
+    set #rememberMe(value) {
+        if (this.renderRoot?.querySelector('#remember')) {
+            this.renderRoot.querySelector('#remember').checked = value;
+        }
     }
 
     async authOk(message) {
@@ -119,9 +286,9 @@ class SignUpForm extends PortfolioElement {
 
     async modalDialogShow() {
         const dialog =  this.renderRoot.querySelector('modal-dialog');
-        let modalResult = await dialog.show("Подключение прошло удачно");
+        let modalResult = await dialog.show("Подключение прошло успешно");
         if (modalResult === "Ok") {
-            this.close();
+            this.close(modalResult);
         }
     }
 

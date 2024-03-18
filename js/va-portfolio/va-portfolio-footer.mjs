@@ -1,8 +1,8 @@
-import { PortfolioElement, html, css } from '../portfolio-element.mjs'
+import { BaseElement, html, css } from '../base-element.mjs'
 
 import '../../components/button/social-button.mjs';
 
-class VAPortfolioFooter extends PortfolioElement {
+class VAPortfolioFooter extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -74,6 +74,7 @@ class VAPortfolioFooter extends PortfolioElement {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
+                    gap: 4px;
                 }
 
                 .social-icons a {
@@ -87,6 +88,7 @@ class VAPortfolioFooter extends PortfolioElement {
                     color: var(--nav-item-active-color);
                     background-color: var(--native-background-color) !important;
                     line-height: 0;
+                    cursor: pointer;
                 }
 
                 .logo > img {
@@ -103,6 +105,11 @@ class VAPortfolioFooter extends PortfolioElement {
                     line-height: 24px;
                 }
 
+                social-button {
+                    width: 46px;
+                    height: 46px;
+                }
+
                 @media (max-width: 300px) {
                     .logo {
                         display: none;
@@ -111,7 +118,9 @@ class VAPortfolioFooter extends PortfolioElement {
             `
         ]
     }
-
+    // social-button[name=telegram]{
+    //     background-color: rgb(3, 155, 229);
+    // }
     constructor() {
         super();
         this.version = "1.0.0";
@@ -119,7 +128,7 @@ class VAPortfolioFooter extends PortfolioElement {
 
     logo() {
         return html`
-            <div class="logo">
+            <div class="logo" @click="${() => scroll(0,0)}">
                 <img src="images/logo-black.svg" alt="" />
             </div>
         `
@@ -128,12 +137,12 @@ class VAPortfolioFooter extends PortfolioElement {
     social() {
         return html`
             <div class="social-icons">
-                <social-button name="telegram" href="https://t.me/v_a_antoshkin" backgroundcolor="rgb(3, 155, 229)" title="Telegram"></social-button>
-                <social-button name="viber" href="viber://chat?number=+79056923607" backgroundcolor="rgb(115, 96, 242)" scale="0.8" title="Viber"></social-button>
-                <social-button name="whatsapp" href="https://wa.clck.bar/79056923607" backgroundcolor="rgb(0, 230, 118)" scale="0.8" title="Whatsapp"></social-button>
-                <social-button name="vk" href="www.google.com" backgroundcolor="rgb(0, 137, 203)" title="VK"></social-button>
-                <social-button name="github" href="https://github.com/v-a-antoshkin" backgroundcolor="rgb(77, 118, 161)" title="Github"></social-button>
-                <social-button name="envelope" href="mailto:v.a.antoshkin@mail.ru?subject=%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0" backgroundcolor="rgb(219, 83, 75)" title="E-mail"></social-button>
+                <social-button name="telegram" href="https://t.me/v_a_antoshkin" title="Telegram"></social-button>
+                <social-button name="viber" href="viber://chat?number=+79056923607" scale="0.8" title="Viber"></social-button>
+                <social-button name="whatsapp" href="https://wa.clck.bar/79056923607" scale="0.7" title="Whatsapp"></social-button>
+                <social-button name="vk" href="https://vk.com/id63554332" title="VK"></social-button>
+                <social-button name="github" href="https://github.com/v-a-antoshkin" title="Github"></social-button>
+                <social-button name="envelope" href="mailto:v.a.antoshkin@mail.ru?subject=%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0" title="E-mail"></social-button>
             </div>
         `;
     }

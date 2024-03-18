@@ -1,4 +1,4 @@
-import { PortfolioElement, html} from '../../../portfolio-element.mjs'
+import { BaseElement, html} from '../../../base-element.mjs'
 
 import './about-me-section-1.mjs';
 import './about-me-section-2.mjs';
@@ -9,7 +9,7 @@ import './about-me-section-6.mjs';
 import './about-me-section-7.mjs';
 import './about-me-section-8.mjs';
 
-class AboutMe extends PortfolioElement {
+class AboutMe extends BaseElement {
     static get properties() {
         return {
             version: { type: String, default: '1.0.0', save: true },

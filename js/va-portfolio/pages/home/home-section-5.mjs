@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class HomeSection5 extends PortfolioElement {
+class HomeSection5 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -100,7 +100,7 @@ class HomeSection5 extends PortfolioElement {
                     object-fit: contain;
                     object-position: 0% 100%;
                     align-self: flex-start;
-                    margin-top: -20%;
+                    margin-top: -50%;
                     z-index: -1;
                 }
 
@@ -153,7 +153,7 @@ class HomeSection5 extends PortfolioElement {
                     text-transform: uppercase;
                     margin: 20px auto 0 0;
                     color: #ffffff !important;
-                    background-color: #17cad0 !important;
+                    background-color: var(--background-green);
                     position: relative;
                     letter-spacing: 1px;
                     font-size: 1rem;
@@ -165,10 +165,11 @@ class HomeSection5 extends PortfolioElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
+                    font-weight: 600;
                 }
 
                 a:hover {
-                    background-color: #15b6bb !important;
+                    background-color: var(--background-green-hover);
                 }
 
                 .horizontal-line {
@@ -202,7 +203,7 @@ class HomeSection5 extends PortfolioElement {
                         <h2>My courses</h2>
                         <h3>I'm a good teacher</h3>
                         <p>The best way to understand yourself is to explain it to someone else</p>
-                        <a href="https://www.popularmechanics.com/technology/robots/a23846041/robot-clean-your-room/" title="robots" target="_blank">Explain it</a>
+                        <a href="#my-courses" title="I'm a teacher">Explain it</a>
                     </div>
                 </div>
             </div>

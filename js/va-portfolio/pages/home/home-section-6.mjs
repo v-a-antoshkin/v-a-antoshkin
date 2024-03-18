@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class HomeSection6 extends PortfolioElement {
+class HomeSection6 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -167,7 +167,7 @@ class HomeSection6 extends PortfolioElement {
                     text-transform: uppercase;
                     margin: 20px 0 0 auto;
                     color: #ffffff !important;
-                    background-color: #17cad0 !important;
+                    background-color: var(--background-green);
                     position: relative;
                     letter-spacing: 1px;
                     font-size: 1rem;
@@ -179,10 +179,12 @@ class HomeSection6 extends PortfolioElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
+                    font-weight: 600;
                 }
 
                 a:hover {
-                    background-color: #15b6bb !important;
+                    background-color: var(--background-green-hover);
+
                 }
 
                 .horizontal-line {
@@ -207,8 +209,8 @@ class HomeSection6 extends PortfolioElement {
                     <div class="layout-middle">
                         <h2>Catch me</h2>
                         <h3>A few amazing ways to catch me</h3>
-                        <p>I've gathered five of the best, weirdest, and fastest ways to find me this year. You don't need to go to Las Vegas, Nevada or New York. You don't need to call Shanghai or Singapore. I'm just here, now and forever. </p>
-                        <a href="https://www.popularmechanics.com/technology/robots/a23846041/robot-clean-your-room/" title="robots" target="_blank">Catch me</a>
+                        <p>I've gathered five of the best, weirdest, and fastest ways to find me this year. You don't need to go to Las Vegas, Nevada or New York. You don't need to call Shanghai or Singapore. I'm just here, now and forever.</p>
+                        <a href="#catch-me" title="I'm here">Catch me</a>
                     </div>
                 </div>
                 <div class="layout-right">

@@ -1,8 +1,8 @@
-import { PortfolioElement, html, css } from '../../js/portfolio-element.mjs';
+import { BaseElement, html, css } from '../../js/base-element.mjs';
 
 import '../icon/icon.mjs'
 
-class ToggleButton extends PortfolioElement {
+class ToggleButton extends BaseElement {
     static get properties() {
         return {
             _useInfo: { type: Boolean, default: true },
@@ -43,22 +43,22 @@ class ToggleButton extends PortfolioElement {
                 margin: 1px;
                 user-select: none;
             }
-            .portfolio-btn {
+            .rrl-btn {
                 display: flex;
                 align-items: center;
                 cursor: pointer;
             }
-            .portfolio-btn:hover {
+            .rrl-btn:hover {
                 transition: .3s;
                 filter: brightness(85%);
                 background-color: var(--nav-item-hover-background-color);
                 color: var(--nav-item-hover-color);
             }
-            .portfolio-btn:active {
+            .rrl-btn:active {
                 transition: .1s;
                 filter: brightness(70%);
             }
-            .portfolio-btn:focus {
+            .rrl-btn:focus {
                 outline:none;
             }
             .left90 {
@@ -110,12 +110,12 @@ class ToggleButton extends PortfolioElement {
         this.fill = this.fill || this.color;
         this.size = this.size || this.height || this.width;
         if (this.icon) _icon = JSON.stringify(this.icon);
-        return html`<portfolio-icon class="${this.toggled ? this.toggledClass : this.notoggledClass}" icon=${_icon} name="${this.toggled ? this.toggledName : this.name}" fill="${this.fill}" size="${this.size}" scale="${this.scale}"
-            rotate="${this.rotate}" speed="${this.speed}" blink="${this.blink}" blval="${this.blval}" path="${this.path}"></portfolio-icon>`;
+        return html`<simple-icon class="${this.toggled ? this.toggledClass : this.notoggledClass}" icon=${_icon} icon-name="${this.toggled ? this.toggledName : this.name}" fill="${this.fill}" size="${this.size}" scale="${this.scale}"
+            rotate="${this.rotate}" speed="${this.speed}" blink="${this.blink}" blval="${this.blval}" path="${this.path}"></simple-icon>`;
     }
     render() {
         return html`
-            <div id="portfolio-btn" class="portfolio-btn"  tabindex="0" style="
+            <div id="rrl-btn" class="rrl-btn"  tabindex="0" style="
                     text-align: ${this.textAlign};
                     width: ${this.width || this.size}px;
                     height: ${this.height || this.size}px;

@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class MyStackSection1 extends PortfolioElement {
+class MyStackSection1 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -30,7 +30,6 @@ class MyStackSection1 extends PortfolioElement {
                     color: black;
                     background-image: url(images/about-me/bgs1-bottom.svg), url(images/about-me/bgs1-top.svg);
                     background-position: 0% 100%, 90% 0%;
-                    min-height: 600px;
                     background-repeat: no-repeat;
                     background-size: 100%, 50%;
                 }
@@ -40,67 +39,38 @@ class MyStackSection1 extends PortfolioElement {
                 }
 
                 .container {
-                    display: flex;
-                    position: relative;
-                    justify-content: space-between;
-                    width: 100%;
-                }
-
-                .layout-right {
-                    display: flex;
-                    flex-basis: 50%;
-                    position: relative;
-                    justify-content: space-between;
                     min-height: 800px;
+                    display: flex;
+                    width: 100%;
                 }
 
                 .layout-left {
                     display: flex;
                     flex-basis: 50%;
-                    position: relative;
                     justify-content: center;
                     align-items: center;
+                    overflow: hidden;
+                }
+
+                .image-left-container {
+                    width: 100%;
+                    line-height: 0;
                 }
 
                 .image-left {
-                    object-position: 50% 50%;
-                    object-fit: cover;
                     width: 80%;
-                    transform: rotate(-20deg);
-                }
-                .image-left-container {
-                    flex-basis: fit-content;
+                    margin: 6% 0px;
+                    transform: rotate(-10deg);
                 }
 
                 .layout-right {
                     display: flex;
                     flex-basis: 50%;
                     flex-direction: column;
-                    position: relative;
                     justify-content: center;
                     align-items: center;
                 }
 
-                .layout-middle {
-                    width: 90%;
-                    justify-content: center;
-                    z-index: 1;
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 80px;
-                    max-width: 600px;
-                }
-
-                video {
-                    height: 100%;
-                    width: 100%;
-                    display: flex;
-                    border: none;
-                    background-color: #000;
-                    margin: 0;
-                    line-height: 1
-                    max-width: 100%;
-                }
                 h1 {
                     font-size: 3.4375rem;
                     font-weight: 700;
@@ -108,8 +78,8 @@ class MyStackSection1 extends PortfolioElement {
                     margin: 20px 0 0;
                     font-family: var(--ubuntu-font-family);
                 }
+
                 p {
-                    font-weight: 400;
                     font-size: 1.25rem;
                     line-height: 1.6;
                     word-wrap: break-word;
@@ -133,8 +103,8 @@ class MyStackSection1 extends PortfolioElement {
                 </div>
                 <div class="layout-right">
                     <div class="layout-middle">
-                        <h1 >What can I do</h1>
-                        <p>I was born in a small town near the capital of our homeland, Moscow, in 1974. My mother was a doctor, and my father was a military man. Grandfather was a tailor, and grandmother was a jewelry seller. I lived a happy and cheerful life before I went to school. If you want to know more about me, scroll down</p>
+                        <h1 >What can I do?</h1>
+                        <p>I know the programming languages C#, Javascript and Python. I work with MySQL, PostgreSQL and CouchDB databases. I use Google's reactive JS-Framework Lit. I know the Linux operating system as a Red Hat engineer</p>
                     </div>
                 </div>
             </div>

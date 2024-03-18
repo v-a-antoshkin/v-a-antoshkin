@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class HomeSection3 extends PortfolioElement {
+class HomeSection3 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -145,7 +145,7 @@ class HomeSection3 extends PortfolioElement {
                     text-transform: uppercase;
                     margin: 20px auto 0 0;
                     color: #ffffff !important;
-                    background-color: #17cad0 !important;
+                    background-color: var(--background-green);
                     position: relative;
                     letter-spacing: 1px;
                     font-size: 1rem;
@@ -157,10 +157,11 @@ class HomeSection3 extends PortfolioElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
+                    font-weight: 600;
                 }
 
                 a:hover {
-                    background-color: #15b6bb !important;
+                    background-color: var(--background-green-hover);
                 }
 
                 .horizontal-line {
@@ -221,7 +222,7 @@ class HomeSection3 extends PortfolioElement {
                         <h2>My technology stack</h2>
                         <h3>Everybody knows...</h3>
                         <p>Everybody knows that Javascript is loaded<br>Everybody writes code with their fingers crossed<br>Everybody knows the C# is over<br>Everybody knows the&nbsp;С++ was lost<br>Everybody knows the Python was fixed<br>The dirty code stay poor, the clear code gets rich<br>That's how&nbsp;programming goes<br>Everybody knows...<br></p>
-                        <a href="https://www.popularmechanics.com/technology/robots/a23846041/robot-clean-your-room/" title="robots" target="_blank">KNOW MORE</a>
+                        <a href="#my-stack" title="I know it">KNOW MORE</a>
                     </div>
                 </div>
             </div>

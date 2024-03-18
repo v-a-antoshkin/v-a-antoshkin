@@ -1,9 +1,9 @@
-import { PortfolioElement, html} from '../../../portfolio-element.mjs'
+import { BaseElement, html} from '../../../base-element.mjs'
 
 import './home-section-1.mjs';
 import './home-section-2.mjs';
 
-class HomePage extends PortfolioElement {
+class HomePage extends BaseElement {
     static get properties() {
         return {
             version: { type: String, default: '1.0.0', save: true },

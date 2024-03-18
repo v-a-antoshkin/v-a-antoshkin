@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class CatchMeSection2 extends PortfolioElement {
+class CatchMeSection2 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -126,17 +126,7 @@ class CatchMeSection2 extends PortfolioElement {
     render() {
         return html`
             <div class="container">
-                <div class="layout-left">
-                    <div class="image-left-container">
-                        <img class="image-left" src="images/about-me/robot-1.avif" alt="" />
-                    </div>
-                </div>
-                <div class="layout-right">
-                    <div class="layout-middle">
-                        <h1 >What Kind of man am I</h1>
-                        <p>I was born in a small town near the capital of our homeland, Moscow, in 1974. My mother was a doctor, and my father was a military man. Grandfather was a tailor, and grandmother was a jewelry seller. I lived a happy and cheerful life before I went to school. If you want to know more about me, scroll down</p>
-                    </div>
-                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15539.474224670596!2d39.75727491917126!3d54.62237057131561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1701552244449!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         `;
         return html`

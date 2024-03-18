@@ -16,7 +16,7 @@ export const formStyles = css`
     --form-border-color: #ddd;
     --form-header-border-color: #ddd;
     --form-outline-color: #999;
-
+    --form-close-button-color: gray;
     /* --button-color: #04aa6d; */
     --button-color: var(--black-square-background-color);
     --button-white-color: var(--white-square-background-color);
@@ -65,12 +65,13 @@ export const formStyles = css`
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0, 0, 0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    backdrop-filter: blur(5px);
 }
 
 /* Modal Form Box */
 .form {
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 800px;
+    width: 60%; /* Could be more or less, depending on screen size */
+    max-width: 450px;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid var(--form-border-color);
     border-radius: 10px;
@@ -87,9 +88,11 @@ export const formStyles = css`
 .form-header {
     display: flex;
     position: relative;
+    align-items: center;
     text-align: center;
     padding: 0px 16px 0 16px;
     border-radius: 10px 10px 0 0;
+
     background-color: var(--form-header-background-color);
     /*border-bottom: solid var(--form-header-border-color) 1px;*/
 }
@@ -99,7 +102,7 @@ export const formStyles = css`
 }
 
 .form-body {
-    padding: 16px;
+    padding: 16px 16px 8px;
 }
 
 .form-footer {
@@ -123,9 +126,11 @@ input[type="number"] {
     margin: 8px 0;
     padding: 12px 20px;
     border: 1px solid #ccc;
+    border-radius: 10px;
     box-sizing: border-box;
     outline-color: var(--form-outline-color);
     color: var(--form-color);
+    font-size: 14px;
 }
 
 #form.dark input[type="text"],
@@ -178,9 +183,11 @@ button {
     margin: 8px 0;
     padding: 14px 20px;
     border: none;
+    border-radius: 15px;
     overflow: hidden;
-    background-color: var(--button-color);
+    background-color: var(--background-green);
     color: white;
+    font-weight: 700;
     white-space: nowrap;
     text-overflow: ellipsis;
     cursor: pointer;
@@ -293,6 +300,13 @@ button:hover {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    margin: 8px 0;
+}
+
+.sign-up-options {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
 }
 
 .checkbox-remember {
@@ -304,12 +318,13 @@ button:hover {
 {
     width: 20px;
     height: 20px;
-    accent-color: var(--button-color);
+    accent-color: var(--checkbox-accent-color);
 }
 
 .checkbox-remember label {
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: bold;
     white-space: nowrap;
 }
 
@@ -378,22 +393,32 @@ span.psw {
 .form-tab {
     position: relative;
     display: flex;
-    vertical-align: top;
+    width: 85px;
+    justify-content: center;
     bottom: auto;
     margin-top: 3px;
-    padding-bottom: 0;
     overflow: hidden;
     line-height: 36px;
     font-weight: normal;
     color: var(--tab-color);
     border: solid var(--form-header-border-color);
-    border-width: 1px 1px 1px;
+    border-width: 1px 1px 0px;
     border-radius: 5px 5px 0 0;
     background: var(--form-background-color);
 }
 
 #form.dark .form-tab {
     background: var(--dark-header-color);
+}
+
+.forgot-password{
+    text-decoration: none;
+    color: #444;
+}
+
+.forgot-password:hover {
+    font-weight: bold;
+    color: var(--link-hover-color);
 }
 
 
@@ -442,6 +467,7 @@ span.psw {
     text-align: center;
     text-decoration: none;
     border-radius: 4px 4px 0 0;
+    border-bottom: none;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -478,7 +504,7 @@ span.psw {
     flex: none;
     right: 20px;
     top: 0;
-    color: var(--form-tab-selected-color);
+    color: var(--form-close-button-color);
     font-size: 35px;
     font-weight: bold;
 }
@@ -496,11 +522,32 @@ span.psw {
     font-weight: bold;
 }
 
+.sign-up-link {
+    text-decoration: underline;
+    color: #444;
+    cursor: pointer;
+}
+
+// .sign-up-link:active {
+//     color: -webkit-activelink;
+// }
+
+.sign-up-link:hover {
+    font-weight: bold;
+    color: var(--link-hover-color);
+}
+
+#google {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+}
+
 .close-button:hover,
 .close-button:focus,
 #form.dark .close-button:hover,
 #form.dark .close-button:focus {
-    color: red;
+    color: var(--link-hover-color);
     cursor: pointer;
 }
 
@@ -615,4 +662,5 @@ span.psw {
         margin-bottom: 8px;
     }
 }
+
 `;

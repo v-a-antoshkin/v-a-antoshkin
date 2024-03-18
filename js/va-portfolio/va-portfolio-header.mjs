@@ -1,13 +1,13 @@
-import { PortfolioElement, html, css } from '../portfolio-element.mjs'
+import { BaseElement, html, css } from '../base-element.mjs'
 
 import '../../components/button/toggle-button.mjs';
 
 
-class VAPortfolioHeader extends PortfolioElement {
+class VAPortfolioHeader extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
-            isVertical: { type: Boolean, default: true },
+            isHorizontal: { type: Boolean, default: true },
             version: { type: String, default: '1.0.0', save: true },
             activePage: { type: String, default: '#my-pride', attribute: 'active-page'}
         }
@@ -34,7 +34,7 @@ class VAPortfolioHeader extends PortfolioElement {
                     box-sizing: border-box;
                 }
 
-                .vertical-container {
+                .horizontal-container {
                     display: flex;
                     position: relative;
                     justify-content: space-between;
@@ -68,6 +68,7 @@ class VAPortfolioHeader extends PortfolioElement {
                 a {
                     text-decoration: none;
                     text-wrap: nowrap;
+                    line-height: 0;
                 }
                 .logo {
                     display: flex;
@@ -78,7 +79,7 @@ class VAPortfolioHeader extends PortfolioElement {
                     color: black;
                 }
 
-                .logo > img {
+                .logo img {
                     padding-right: 1rem;
                     width: 4rem;
                     height: 4rem;
@@ -94,23 +95,20 @@ class VAPortfolioHeader extends PortfolioElement {
                     display: flex;
                     font-family: serif;
                 }
-                nav.horizontal{
-                    align-items: center;
+                nav.vertical{
+                    align-items: flex-start;
                     content-justify: space-between;
                     margin: 0;
                     padding: 0;
+                    height: 200px;
+                    overflow: hidden;
                     transition: height 0.35s ease;
                 }
-                nav.horizontal:not(.show) {
-                    display: none;
+                nav.vertical:not(.show) {
+                    height: 0;
                 }
+
                 nav.horizontal{
-                    align-items: center;
-                    content-justify: space-between;
-                    margin: 0;
-                    padding: 0;
-                }
-                nav.vertical{
                     align-items: center;
                     margin: 0;
                     padding: 0;
@@ -122,25 +120,25 @@ class VAPortfolioHeader extends PortfolioElement {
                     padding: 0;
                     line-height: 1;
                 }
-                nav.horizontal ul {
+                nav.vertical ul {
                     flex-direction: column;
                     width: 100%;
                 }
                 nav li {
                     display: inline-block;
                     position: relative;
-                    vertical-align: middle;
+                    horizontal-align: middle;
                     height: 100%;
                     padding: 0;
                     margin: 0;
                 }
-                nav.horizontal li {
+                nav.vertical li {
                     border-bottom: 1px solid var(--nav-item-hover-background-color);
                 }
-                nav.vertical li:not(:last-child) {
+                nav.horizontal li:not(:last-child) {
                     margin-right: 2px;
                 }
-                nav.horizontal a{
+                nav.vertical a{
                     display: block;
                 }
                 nav a {
@@ -172,21 +170,25 @@ class VAPortfolioHeader extends PortfolioElement {
 
     logo() {
         return html`
-            <div class="logo">
-                <img src="images/logo-yellow.svg" alt="">
-                <h3 class="text">
-                    <a href="#">${this.title}<br/>Fullstack Developer</a>
-                </h3>
-            </div>
+                <div class="logo" title="Home">
+                    <a href="#">
+                        <img src="images/logo-yellow.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <h3 class="text">
+                            ${this.title}<br/>Fullstack Developer
+                        </h3>
+                    </a>
+                </div>
         `
     }
 
-    verticalHeader() {
+    horizontalHeader() {
         return html`
             <header>
-                <div class="vertical-container">
+                <div class="horizontal-container">
                     ${this.logo()}
-                    <nav class="vertical">
+                    <nav class="horizontal">
                         <ul>
                             <li><a href="#my-pride" ?active=${this.activePage==="my-pride" || this.activePage==="home-page"}>My pride</a></li>
                             <li><a href="#about-me" ?active=${this.activePage==="about-me"}>About me</a></li>
@@ -200,7 +202,7 @@ class VAPortfolioHeader extends PortfolioElement {
         `;
     }
 
-    horizontalHeader() {
+    verticalHeader() {
         return html`
             <header>
                 <div class="container">
@@ -208,7 +210,7 @@ class VAPortfolioHeader extends PortfolioElement {
                         ${this.logo()}
                         <toggle-button name="bars" toggledname="xmark" border="0" color="#f7cf00" @click=${this.showMenu} size="36"></toggle-button>
                     </div>
-                    <nav class="horizontal${this.isShow ? ' show' : ''}">
+                    <nav class="vertical${this.isShow ? ' show' : ''}">
                         <ul>
                             <li><a href="#my-pride" ?active=${this.activePage==="my-pride" || this.activePage==="home-page"}>My pride</a></li>
                             <li><a href="#about-me" ?active=${this.activePage==="about-me"}>About me</a></li>
@@ -223,18 +225,18 @@ class VAPortfolioHeader extends PortfolioElement {
     }
 
     render() {
-        return this.isVertical ? this.verticalHeader() : this.horizontalHeader();
+        return this.isHorizontal ? this.horizontalHeader() : this.verticalHeader();
     }
 
     firstUpdated() {
         super.firstUpdated();
         const md = window.matchMedia( "(min-width: 920px)" );
-        this.isVertical = md.matches;
+        this.isHorizontal = md.matches;
         md.addEventListener('change', this.matchMediaChange.bind(this), false);
     }
 
     matchMediaChange(e) {
-        this.isVertical = e.matches;
+        this.isHorizontal = e.matches;
     }
 
     showMenu() {

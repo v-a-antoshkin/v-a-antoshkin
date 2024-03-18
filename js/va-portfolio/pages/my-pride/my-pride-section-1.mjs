@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class MyPrideSection1 extends PortfolioElement {
+class MyPrideSection1 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -66,10 +66,11 @@ class MyPrideSection1 extends PortfolioElement {
                     object-position: 50% 50%;
                     object-fit: cover;
                     width: 80%;
-                    transform: rotate(-20deg);
+                    transform: rotate(-10deg);
                 }
                 .image-left-container {
                     flex-basis: fit-content;
+                    overflow: hidden;
                 }
 
                 .layout-right {
@@ -133,8 +134,8 @@ class MyPrideSection1 extends PortfolioElement {
                 </div>
                 <div class="layout-right">
                     <div class="layout-middle">
-                        <h1 >What can I do</h1>
-                        <p>I was born in a small town near the capital of our homeland, Moscow, in 1974. My mother was a doctor, and my father was a military man. Grandfather was a tailor, and grandmother was a jewelry seller. I lived a happy and cheerful life before I went to school. If you want to know more about me, scroll down</p>
+                        <h1>What is my pride?</h1>
+                        <p>The pride of any person is modesty. I suffer from feelings of low self-esteem, but artificial intelligence has no feelings. So I can be proud instead of him. You can be proud of him with me too. And i believe that one day he will learn to be proud of us too</p>
                     </div>
                 </div>
             </div>

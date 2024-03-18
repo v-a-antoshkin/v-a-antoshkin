@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class HomeSection2 extends PortfolioElement {
+class HomeSection2 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -139,7 +139,7 @@ class HomeSection2 extends PortfolioElement {
                     text-transform: uppercase;
                     margin: 20px 0 0 auto;
                     color: #ffffff !important;
-                    background-color: #17cad0 !important;
+                    background-color: var(--background-green);
                     letter-spacing: 1px;
                     font-size: 1rem;
                     line-height: 1.4;
@@ -150,10 +150,11 @@ class HomeSection2 extends PortfolioElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
+                    font-weight: 600;
                 }
 
                 a:hover {
-                    background-color: #15b6bb !important;
+                    background-color: var(--background-green-hover);
                 }
 
                 .horizontal-line {
@@ -211,7 +212,7 @@ class HomeSection2 extends PortfolioElement {
                         <h2>About me</h2>
                         <h3>I'm not<br>a Robot</h3>
                         <p>I love Kent Beck. I believe that the 40-hour work week is the best achievement of modern humanity. Come in and learn more about me, my mom, dad, siblings, kids, wifes, friends, grandparents, aunts and uncles, cousins, nieces and nephews, godmother and godfather, etc.</p>
-                        <a href="#about-me">COME IN</a>
+                        <a href="#about-me" title="Know me better">COME IN</a>
                     </div>
                 </div>
                 <div class="layout-right">

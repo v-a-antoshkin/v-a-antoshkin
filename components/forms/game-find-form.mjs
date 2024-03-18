@@ -1,5 +1,5 @@
 
-import { PortfolioElement, html, css } from '../../js/portfolio-element.mjs';
+import { BaseElement, html, css } from '../../js/base-element.mjs';
 
 import { formStyles } from './form-css.mjs'
 
@@ -7,7 +7,7 @@ import { formStyles } from './form-css.mjs'
 
 import '../dialogs/modal-dialog.mjs';
 
-class GameFindForm extends PortfolioElement {
+class GameFindForm extends BaseElement {
     static get properties() {
         return {
             version: { type: String, default: '1.0.0', save: true, category: 'settings' },

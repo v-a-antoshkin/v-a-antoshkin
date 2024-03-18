@@ -1,9 +1,9 @@
-import { PortfolioElement, html} from '../../../portfolio-element.mjs'
+import { BaseElement, html} from '../../../base-element.mjs'
 
 import './catch-me-section-1.mjs';
 import './catch-me-section-2.mjs';
 
-class CatchMe extends PortfolioElement {
+class CatchMe extends BaseElement {
     static get properties() {
         return {
             version: { type: String, default: '1.0.0', save: true },
@@ -17,9 +17,8 @@ class CatchMe extends PortfolioElement {
 
     render() {
         return html`
-            <my-stack-section-1></my-stack-section-1>
-            <my-stack-section-2></my-stack-section-2>
-
+            <catch-me-section-1></catch-me-section-1>
+            <catch-me-section-2></catch-me-section-2>
         `;
     }
 

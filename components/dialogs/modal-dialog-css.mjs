@@ -59,13 +59,23 @@ button {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    background-color:  var(--button-color);
+    background-color: var(--background-green);
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    opacity: 0.8;
+    transition: .3s;
+    filter: brightness(110%);
+}
+
+button:active {
+    transition: .3s;
+    filter: brightness(90%);
+}
+
+.btn-ok:hover {
+    background-color: var(--link-hover-color);
 }
 
 .footer-button {
@@ -73,7 +83,7 @@ button:hover {
     width: auto;
     margin: 4px;
     padding: 10px 18px;
-    background-color: var(--button-color);
+    background-color:  var(--background-green);
 }
 
 .footer-buttons {
@@ -93,7 +103,7 @@ button:hover {
 .dialog-header {
     display: flex;
     align-items: center;
-    padding: 0 16px 0 20px;
+    padding: 8px 16px 8px 20px;
     border-radius: 10px 10px 0 0;
     background-color: var(--form-header-background-color);
 }
@@ -106,7 +116,7 @@ button:hover {
     flex: auto;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #000;
+    color: var(--form-color);
     font-size: 20px;
 }
 
@@ -117,7 +127,7 @@ button:hover {
 /* The Close Button (x) */
 .dialog-button-close {
     flex: none;
-    color: #000;
+    color: var(--form-color);
     font-size: 35px;
     font-weight: bold;
 }
@@ -147,7 +157,7 @@ button:hover {
 }
 
 .dialog-footer {
-    padding: 16px;
+    padding: 8px 16px 8px 20px;
     border-radius: 0 0 10px 10px;
     overflow: hidden;
     background-color: var(--form-header-background-color);
@@ -184,10 +194,10 @@ button:hover {
 /* Modal Content/Box */
 .modal-dialog-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 15% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 800px;
+    max-width: 550px;
     border-radius: 10px;
 }
 

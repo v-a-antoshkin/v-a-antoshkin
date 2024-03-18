@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class HomeSection1 extends PortfolioElement {
+class HomeSection1 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -106,7 +106,7 @@ class HomeSection1 extends PortfolioElement {
                     text-transform: uppercase;
                     margin: 20px auto 0 0;
                     color: #ffffff !important;
-                    background-color: #0F8080 !important;
+                    background-color: var(--background-green);
                     /*background-color: #17cad0 !important;*/
                     position: relative;
                     letter-spacing: 1px;
@@ -119,11 +119,11 @@ class HomeSection1 extends PortfolioElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
-                    font-weight: 500;
+                    font-weight: 600;
                 }
 
                 a:hover {
-                    background-color: #15b6bb !important;
+                    background-color: var(--background-green-hover);
                 }
 
                 .horizontal-line {

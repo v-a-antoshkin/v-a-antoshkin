@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class AboutMeSection1 extends PortfolioElement {
+class AboutMeSection1 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -65,9 +65,9 @@ class AboutMeSection1 extends PortfolioElement {
                 .image-left {
                     object-position: 50% 50%;
                     object-fit: cover;
-                    width: 80%;
-                    transform: rotate(-20deg);
+                    width: 100%;
                 }
+                
                 .image-left-container {
                     flex-basis: fit-content;
                 }
@@ -117,7 +117,7 @@ class AboutMeSection1 extends PortfolioElement {
             `
         ]
     }
-
+// transform: rotate(-20deg);
     constructor() {
         super();
         this.version = "1.0.0";
@@ -128,12 +128,12 @@ class AboutMeSection1 extends PortfolioElement {
             <div class="container">
                 <div class="layout-left">
                     <div class="image-left-container">
-                        <img class="image-left" src="images/about-me/robot-1.avif" alt="" />
+                        <img class="image-left" src="images/home/robot-11.avif" alt="" />
                     </div>
                 </div>
                 <div class="layout-right">
                     <div class="layout-middle">
-                        <h1 >What Kind of man am I</h1>
+                        <h1 >What kind of man am I?</h1>
                         <p>I was born in a small town near the capital of our homeland, Moscow, in 1974. My mother was a doctor, and my father was a military man. Grandfather was a tailor, and grandmother was a jewelry seller. I lived a happy and cheerful life before I went to school. If you want to know more about me, scroll down</p>
                     </div>
                 </div>

@@ -1,9 +1,9 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
 import '../../../../components/button/toggle-button.mjs';
 
 
-class HomeSection7 extends PortfolioElement {
+class HomeSection7 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -59,16 +59,16 @@ class HomeSection7 extends PortfolioElement {
                 h2 {
                     margin: 0;
                     font-family: var(--ubuntu-font-family);
-                    font-weight: 300;
+                    font-weight: 500;
                     line-height: 1.2;
-                    font-size: 30px;
+                    font-size: 2.5rem;
                 }
 
                 p {
                     font-family: var(--open-font-family);
-                    font-weight: 400;
+                    font-weight: 600;
                     line-height: 1.6;
-                    font-size: 1rem;
+                    font-size: 1.25rem;
                     word-wrap: break-word;
                     position: relative;
                     text-align: left;

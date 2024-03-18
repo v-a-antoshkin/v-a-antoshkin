@@ -14,8 +14,10 @@ body {
     --footer-color: white;
     --ubuntu-font-family: Ubuntu, sans-serif;
     --open-font-family: 'Open Sans', sans-serif;
-    --background-green: #108484;
-    /* --background-green: #17cad0; */
+    /* --background-green: #108484; */
+    /* #0F8080 */
+    --background-green: #17cad0;
+    --background-green-hover: #15b6bb;
     --background-magenta: #d954db;
     --background-gray: #e5e5e5;
     --background-gray-light: #f2f2f2;

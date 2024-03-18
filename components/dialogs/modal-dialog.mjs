@@ -1,9 +1,10 @@
-
-import { PortfolioElement, html, css } from '../../js/portfolio-element.mjs';
+import { BaseElement, html, css } from '../../js/base-element.mjs';
 
 import { formStyles } from './modal-dialog-css.mjs'
+import '../button/close-button.mjs';
 
-class ModalDialog extends PortfolioElement {
+customElements.define('modal-dialog', class ModalDialog extends BaseElement {
+
     static get properties() {
         return {
             version: { type: String, default: '1.0.0', save: true, category: 'settings' },
@@ -18,7 +19,7 @@ class ModalDialog extends PortfolioElement {
             formStyles,
             css`
                 :host {
-                    user-select: none;
+                    color: var(--form-color);
                 }
             `
         ]
@@ -34,8 +35,8 @@ class ModalDialog extends PortfolioElement {
             <div id="dialog" class="modal-dialog ${this.opened ? 'show': ''} ${this.animateClose ? 'animate-close': ''}">
                 <div class="modal-dialog-content animate" id="modal-dialog">
                     <div class="dialog-header">
-                        <span id="dialog-title" class="dialog-title no-select">Сообщение</span>
-                        <span id="dialog-button-close" class="dialog-button-close no-select" title="Закрыть" @click=${()=>this.close()}>&times;</span>
+                        <span id="dialog-title" class="dialog-title no-select">Message</span>
+                        <close-button class="close-button no-select" name="times" @click=${()=>this.close('CANCEL')}></close-button>
                     </div>
 
                     <div class="dialog-body">
@@ -44,8 +45,7 @@ class ModalDialog extends PortfolioElement {
 
                     <div class="dialog-footer no-select">
                         <div class="footer-buttons">
-
-                            <button type="button" id="ok-button" class="footer-button btn-ok" @click=${()=>this.ok()}>Понял</button>
+                            <button type="button" id="ok-button" class="footer-button btn-ok" @click=${()=>this.ok()}>OK</button>
                         </div>
                     </div>
                 </div>
@@ -57,25 +57,21 @@ class ModalDialog extends PortfolioElement {
         super.firstUpdated();
     }
 
-    dialogResult
-
     show(message) {
         this.message = message;
         this.opened = true;
-        return new Promise( (resolve, reject) => {
-            this.dialogResult = resolve;
+        return new Promise( resolve => {
+            this.modalResult = resolve;
         })
     }
 
     ok() {
-        this.dialogResult('Ok');
+        this.modalResult('Ok');
         this.opened = false;
     }
 
     close() {
         this.opened = false;
-        this.dialogResult('Close');
+        this.modalResult('Close');
     }
-}
-
-customElements.define("modal-dialog", ModalDialog);
+});

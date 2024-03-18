@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class AboutMeSection2 extends PortfolioElement {
+class AboutMeSection2 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },

@@ -1,6 +1,6 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class AboutMeSection5 extends PortfolioElement {
+class AboutMeSection5 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -220,18 +220,18 @@ class AboutMeSection5 extends PortfolioElement {
                         <div class="item-layout">
                             <div class="image image-1"></div>
                             <span><img class="image-quote" src="images/about-me/quotes.png" alt=""></span>
-                            <p class="u-text u-text-2">Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla pharetra diam sit amet nisl.&nbsp;</p>
-                            <h5 class="u-custom-font u-font-montserrat u-text u-text-3">Celia Almeda</h5>
-                            <h5 class="u-custom-font u-text u-text-font u-text-4">CEO Company</h5>
+                            <p>Vladislav Antoshkin has been working at our university since 2003. He is a leading teacher in the field of computer science. I have no doubt about his professional and human qualities. I am pleased to collaborate with him.</p>
+                            <h5>Igor Murog</h5>
+                            <h5>Rector of the Russian State University</h5>
                         </div>
                     </div>
                     <div class="container-item container-item-2">
                         <div class="item-layout">
                             <div class="image image-2"></div>
                             <span><img class="image-quote" src="images/about-me/quotes.png" alt=""></spanclass=>
-                            <p>Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla pharetra diam sit amet nisl.&nbsp;</p>
-                            <h5>Celia Almeda</h5>
-                            <h5>CEO Company</h5>
+                            <p>I met Vladislav in 2008. Since then, we have been closely cooperating on the development of the All-Russian Polyathlon Federation. All information support of our organization is developed and supported by him.</p>
+                            <h5>Oleg Lisov</h5>
+                            <h5>President of the All-Russian Polyathlon Federation</h5>
                         </div>
                     </div>
                 </div>

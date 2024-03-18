@@ -1,4 +1,4 @@
-import { PortfolioElement, html, css } from '../portfolio-element.mjs'
+import { BaseElement, html, css } from '../base-element.mjs'
 
 import './va-portfolio-header.mjs';
 import './va-portfolio-footer.mjs';
@@ -6,7 +6,7 @@ import './va-portfolio-footer.mjs';
 import './pages/home/home.mjs'
 // import './pages/about-me/about-me.mjs'
 
-class VAPortfolio extends PortfolioElement {
+class VAPortfolio extends BaseElement {
     static get properties() {
         return {
             version: { type: String, default: '1.0.0', save: true, category: 'settings' },
@@ -77,7 +77,7 @@ class VAPortfolio extends PortfolioElement {
     firstUpdated() {
         super.firstUpdated();
         const lazyIterator = this.lazyLoad();
-        setInterval(() => lazyIterator.next(), 2000);
+        const lazyInterval = setInterval(() => lazyIterator.next().done ? clearInterval(lazyInterval) : '', 2000);
     }
 }
 

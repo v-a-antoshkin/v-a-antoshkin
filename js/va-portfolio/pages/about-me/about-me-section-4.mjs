@@ -1,6 +1,8 @@
-import { PortfolioElement, html, css } from '../../../portfolio-element.mjs'
+import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class AboutMeSection4 extends PortfolioElement {
+import '../../../../components/button/counter-button.mjs';
+
+class AboutMeSection4 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -42,8 +44,9 @@ class AboutMeSection4 extends PortfolioElement {
                 .layout-left {
                     display: flex;
                     flex-basis: 100%;
-                    align-items: stretch;
+                    align-items: streach;
                     margin: 40px 0;
+                    gap: 20px;
                 }
 
                 .image-left {
@@ -54,7 +57,10 @@ class AboutMeSection4 extends PortfolioElement {
                     width: 212px;
                     height: 471px;
                 }
-
+                counter-button {
+                    width: 40%;
+                    margin-top: 5%;
+                }
                 .image-right-container {
                     // background-image: url(images/cellbg2.jpg);
                     // background-repeat: no-repeat;
@@ -140,16 +146,17 @@ class AboutMeSection4 extends PortfolioElement {
 
                 .layout-middle-1 {
                     background-color: white;
-                    margin: 0px 10px;
+                    box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 20px 0px;
                 }
 
                 .layout-middle-2 {
                     background-color: var(--nav-item-hover-background-color);
+                    box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 20px 0px;
                 }
 
                 .layout-middle-3 {
                     background-color: white;
-                    margin: 0px 10px;
+                    box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 20px 0px;
                 }
                 h4 {
                     margin: 20px 20px 0;
@@ -176,13 +183,15 @@ class AboutMeSection4 extends PortfolioElement {
                     font-family: var(--ubuntu-font-family);
                     line-height: 1.2;
                     overflow-wrap: break-word;
+                    cursor: pointer;
                 }
 
                 p {
                     font-size: 1.25rem;
                     line-height: 1.6;
                     padding: 0px 20px;
-                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                    flex: 1;
                 }
 
                 a {
@@ -214,6 +223,9 @@ class AboutMeSection4 extends PortfolioElement {
                     margin-top: 24px;
                     background-color: var(--native-background-color);
                 }
+                counter-button {
+                    cursor: pointer;
+                }
             `
         ]
     }
@@ -224,41 +236,59 @@ class AboutMeSection4 extends PortfolioElement {
     }
 
     render() {
+        // <div class="counter counter-1">
+        //     <h2>20</h2>
+        // </div>
         return html`
             <div class="container">
                 <div class="layout-left">
                     <div class="layout-middle layout-middle-1">
-                        <div class="counter counter-1">
-                            <h2>20</h2>
-                        </div>
-                        <h5>Certificates</h5>
-                        <p>In 1981 I went to school number 43 in the city of Ryazan, where I studied ingloriously until 1989. I received further secondary education at vocational school number 12, where I became interested in computer science and computers.</p>
+                        <counter-button @click=${this.certificatesClick} max="9" duration="5000"></counter-button>
+                        <h5 @click=${this.certificatesClick}>My certificates</h5>
+                        <p>I patented my first program in 2000. The seal on the certificate was gold. In 2009, the seal became copper. Now it's blue. I'm far from thinking that this color has a hidden meaning, but you can check it yourself.</p>
                     </div>
                     <div class="layout-middle layout-middle-2">
-                        <div class="counter counter-2">
-                            <h2>60</h2>
-                        </div>
-                        <h5>Publications</h5>
-                        <p>In 1992 I entered the Ryazan Radio Engineering Institute and graduated with honors with a degree in industrial electronics with a specialization in microprocessor technology</p>
+                        <counter-button @click=${this.publicationsClick} max="58" duration="5000" class="native"></counter-button>
+                        <h5 @click=${this.publicationsClick}>My publications</h5>
+                        <p>I love writing scientific articles. I started doing this in 1997 and try to do it as often as possible. Lately I've been doing this with my students. I hope they will also become good writers over time.</p>
+                        </a>
                     </div>
                     <div class="layout-middle layout-middle-3">
-                        <div class="counter counter-3">
-                            <h2>4</h2>
-                        </div>
-                        <h5>Diplomas</h5>
-                        <p>Scientific activity fascinated me so much that I entered graduate school and successfully defended my Ph.D. thesis</p>
+                        <counter-button @click=${this.diplomasClick} max="3" duration="5000" class="gray"></counter-button>
+                        <h5 @click=${this.diplomasClick}>My education</h5>
+                        <p>I believe that the teaching made a man out of a monkey. I've been learning all my life and now I teach other people how to develop software. You can see that I have a good education.</p>
                     </div>
                 </div>
             </div>
         `;
     }
 
+    publicationsClick() {
+        window.location.hash='my-publications'
+    }
+
+    certificatesClick() {
+        window.location.hash='my-certificates'
+    }
+    diplomasClick() {
+        window.location.hash='my-education'
+    }
+
+    * lazyLoad() {
+
+        const lazyPages=['my-publications', 'my-education', 'my-certificates'];
+        for (const pageName of lazyPages) {
+            import(`./../../pages/${pageName}/${pageName}.mjs`);
+            yield pageName;
+        }
+    }
+
     firstUpdated() {
         super.firstUpdated();
-        const md = window.matchMedia( "(min-width: 920px)" );
-        this.isVertical = md.matches;
-        md.addEventListener('change', this.matchMediaChange.bind(this), false);
+        const lazyIterator = this.lazyLoad();
+        const lazyInterval = setInterval(() => lazyIterator.next().done ? clearInterval(lazyInterval) : '', 2000);
     }
+
 
     matchMediaChange(e) {
         this.isVertical = e.matches;

@@ -1,38 +1,55 @@
-import { PortfolioElement, html, css } from '../../js/portfolio-element.mjs';
+import { BaseElement, html, css, nothing } from '../../js/base-element.mjs';
 
 import '../icon/icon.mjs'
 
-customElements.define('social-button', class SocialButton extends PortfolioElement {
+customElements.define('social-button', class SocialButton extends BaseElement {
     static get properties() {
         return {
-            name: { type: String, default: '', isIcon: true },
+            name: { type: String, default: ''},
             href: { type: String, default: '' },
-            fill: { type: String, default: 'white' },
-            scale: { type: String, default: '1.0' },
-            color: { type: String, default: 'white' },
+            scale: { type: String, default: '' },
             title: { type: String, default: '' },
+            target: { type: String, default: '_blank' },
             size: { type: Number, default: 46 },
-
-            backgroundColor: { type: String, default: 'var(--native-background-color)' },
         }
     }
 
     static get styles() {
-        return css`
-            :host {
-                display: inline-block;
-                vertical-align: middle;
-                padding: 2px;
-                user-select: none;
-            }
-
-            a {
-                display: block;
-                border-radius: 50%;
-                align-items: center;
-                cursor: pointer;
-            }
-        `;
+        return [
+            BaseElement.styles,
+            css`
+                :host {
+                    display: inline;
+                    vertical-align: middle;
+                    line-height: 1;
+                    border-radius: var(--social-button-border-radius, 50%);
+                }
+                a {
+                    display: block;
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: inherit;
+                }
+                :host([name="telegram"]){
+                    background-color: var(--telegram-background-color, rgb(3, 155, 229));
+                }
+                :host([name=viber]){
+                    background-color: var(--viber-background-color,rgb(115, 96, 242));
+                }
+                :host([name=whatsapp]){
+                    background-color: var(--whatsapp-background-color, rgb(0, 230, 118));
+                }
+                :host([name=vk]){
+                    background-color: var(--vk-background-color, rgb(3, 155, 229));
+                }
+                :host([name=github]){
+                    background-color: var(--github-background-color, rgb(77, 118, 161));
+                }
+                :host([name=envelope]){
+                    background-color: var(--envelope-background-color, rgb(219, 83, 75));
+                }
+            `
+        ];
     }
 
     firstUpdated() {
@@ -41,8 +58,8 @@ customElements.define('social-button', class SocialButton extends PortfolioEleme
 
     render() {
         return html`
-            <a href="${this.href}" style="background-color: ${this.backgroundColor};" target="_blank" title="${this.title}">
-                <portfolio-icon name="${this.name}" fill="${this.color}" size="${this.size}" scale="${this.scale}"></portfolio-icon>
+            <a href=${this.href} target=${this.target || nothing} title=${this.title || nothing}>
+                <simple-icon icon-name=${this.name} size=${this.size} scale=${this.scale || nothing}></simple-icon>
             </a>
         `;
     }

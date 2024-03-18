@@ -1,9 +1,9 @@
 
-import { PortfolioElement, html, css } from '../../js/portfolio-element.mjs';
+import { BaseElement, html, css } from '../../js/base-element.mjs';
 
 import { formStyles } from './game-fine-dialog-css.mjs'
 
-class GameFindDialog extends PortfolioElement {
+class GameFindDialog extends BaseElement {
     static get properties() {
         return {
             version: { type: String, default: '1.0.0', save: true, category: 'settings' },
