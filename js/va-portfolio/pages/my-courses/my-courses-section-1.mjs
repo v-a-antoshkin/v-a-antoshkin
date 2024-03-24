@@ -9,6 +9,7 @@ class MyCoursesSection1 extends BaseElement {
         return {
             isShow: { type: Boolean, default: false },
             isVertical: { type: Boolean, default: true },
+            currentCourse: { type: BigInt, default: 0, local: true },
             version: { type: String, default: '1.0.0', save: true },
         }
     }
@@ -135,42 +136,15 @@ class MyCoursesSection1 extends BaseElement {
         this.version = "1.0.0";
     }
 
-//     <div class="layout-right">
-//     <div class="layout-middle">
-//         <h1 >What Kind of man am I</h1>
-//         <p>I was born in a small town near the capital of our homeland, Moscow, in 1974. My mother was a doctor, and my father was a military man. Grandfather was a tailor, and grandmother was a jewelry seller. I lived a happy and cheerful life before I went to school. If you want to know more about me, scroll down</p>
-//     </div>
-// </div>
-        // <div class="layout-left">
-        //     <div class="image-left-container">
-        //         <img class="image-left" src="images/about-me/robot-1.avif" alt="" />
-        //     </div>
-        // </div>
     render() {
         return html`
             <div class="container">
                 <simple-icon icon-name="bgs-1-my-publications" fill="orange"></simple-icon>
                 <div class="writer-image"></div>
-                <div class="circle-image" @click=${this.publicationClick}>${courses.length}</div>
+                <div class="circle-image" @click=${this.publicationClick}>${courses[this.currentCourse].links.length}</div>
                 <div class="container-layout-1">
                     <h2>I'm a good teacher</h2>
                     <h1>If you want to understand yourself, explain it to others</h1>
-                </div>
-            </div>
-        `;
-        return html`
-            <div class="container">
-                <div class="layout-left"></div>
-                <div class="layout-right">
-                    <div class="layout-middle">
-                        <div>
-                            <h5>Innovative programming</h5>
-                            <h1>Reinforcement<br>learning<br>systems</h1>
-                            <p>The future is already here. Аrtificial intelligence never sleeps and never gets bored</p>
-                            <a href="#my-pride">Learn more</a>
-                            <video class="elementor-video" src="https://historytravel.com/wp-content/uploads/2023/02/History-Travel-Launch-Promo-20-FULL-V2-.mp4" autoplay="" controls="" muted="muted" playsinline="" controlslist="nodownload"></video>
-                        </div>
-                    </div>
                 </div>
             </div>
         `;

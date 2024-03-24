@@ -61,6 +61,7 @@ class MyStackSection5 extends BaseElement {
                 .image-right-1 {
                     object-position: 50% 50%;
                     object-fit: cover;
+                    cursor: pointer;
                     width: 80%;
                 }
 
@@ -204,14 +205,15 @@ class MyStackSection5 extends BaseElement {
         return html`
             <div class="container">
                 <div class="layout-right">
-                    <img class="image-right-1" src="images/my-stack/federation.avif" alt="">
+                    <img class="image-right-1" src="images/my-stack/federation.avif"
+                     alt="" title="Show site">
                 </div>
                 <div class="layout-left">
                     <div class="layout-middle">
                         <h2>I know PHP</h2>
                         <h3>I love Polyathlon</h3>
                         <p>For many years I have been working for the All-Russian Polyathlon Federation. I like competitions, athletes, GTO standards. I like people who support this sport. I like helping them with IT technologies</p>
-                        <a href="https://www.popularmechanics.com/technology/robots/a23846041/robot-clean-your-room/" title="robots" target="_blank">KNOW MORE</a>
+                        <a href="https://github.com/polyathlon/polyathlon-presidium" title="Polyathlon Presidium" target="_blank">KNOW MORE</a>
                     </div>
                 </div>
             </div>

@@ -73,6 +73,7 @@ class MyStackSection6 extends BaseElement {
                 .image-right {
                     width: 100%;
                     padding: 0 20px 0px 20px;
+                    cursor: pointer;
                 }
 
                 .layout-middle {
@@ -147,15 +148,15 @@ class MyStackSection6 extends BaseElement {
                 <div class="layout-left">
                     <img class="image-left" src="images/home/bgs2-left.avif" alt="">
                     <div class="layout-middle">
-                        <h2>I know JS</h2>
-                        <h3>ECMA-262 must live</h3>
-                        <p>I believe that Javascript is the best programming language because it can benefit all the people on earth. It is difficult to understand and study, but when you do it, you will become the happiest people in the whole world. I hope to meet the world chess champion Ding Liren someday</p>
+                        <h2>I know Node.js</h2>
+                        <h3>Node.js gave me all</h3>
+                        <p>Node.js helped me learn fundamental programming concepts, file system access methods, asynchrony, HTTP servers, routing mechanism, and how to work with databases.</p>
                         <a href="https://github.com/polyathlon/polyathlon/tree/main/Polyathlon">CODE EXAMPLE</a>
                     </div>
                 </div>
                 <div class="layout-right">
                     <div class="image-right-container">
-                        <img class="image-right" src="images/my-stack/chess-game.avif" alt="">
+                        <img class="image-right" src="images/my-stack/site-polyathlon.avif" @click=${() => window.open('https://polyathlon.ru/', '_blank')} title="Show Site" alt="">
                     </div>
                 </div>
             </div>

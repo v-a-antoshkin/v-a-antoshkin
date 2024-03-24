@@ -62,6 +62,7 @@ class MyStackSection3 extends BaseElement {
                     object-position: 50% 50%;
                     object-fit: cover;
                     width: 80%;
+                    cursor: pointer;
                 }
 
                 .image-right-2 {
@@ -204,14 +205,14 @@ class MyStackSection3 extends BaseElement {
         return html`
             <div class="container">
                 <div class="layout-right">
-                    <img class="image-right-1" src="images/my-stack/chess-game.avif" alt="">
+                    <img class="image-right-1" src="images/my-stack/chess-game.avif" @click=${() => window.open('https://neuro-rsu.github.io/neuro-chess/', '_blank')} title="Try To Play" alt="">
                 </div>
                 <div class="layout-left">
                     <div class="layout-middle">
                         <h2>I know JS</h2>
                         <h3>ECMA-262 must live</h3>
                         <p>I believe that Javascript is the best programming language because it can benefit all the people on earth. It is difficult to understand and study, but when you do it, you will become the happiest people in the whole world. I hope to meet the world chess champion Ding Liren someday</p>
-                        <a href="https://www.popularmechanics.com/technology/robots/a23846041/robot-clean-your-room/" title="robots" target="_blank">KNOW MORE</a>
+                        <a href="https://github.com/neuro-rsu/neuro-chess/blob/main/index.html" title="robots" target="_blank">KNOW MORE</a>
                     </div>
                 </div>
             </div>

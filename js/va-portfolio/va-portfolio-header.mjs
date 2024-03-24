@@ -192,8 +192,8 @@ class VAPortfolioHeader extends BaseElement {
                         <ul>
                             <li><a href="#my-pride" ?active=${this.activePage==="my-pride" || this.activePage==="home-page"}>My pride</a></li>
                             <li><a href="#about-me" ?active=${this.activePage==="about-me"}>About me</a></li>
-                            <li><a href="#my-courses" ?active=${this.activePage==="my-courses"}>My courses</a></li>
                             <li><a href="#my-stack" ?active=${this.activePage=="my-stack"}>My stack</a></li>
+                            <li><a href="#my-courses" ?active=${this.activePage==="my-courses"}>My courses</a></li>
                             <li><a href="#catch-me" ?active=${this.activePage=="catch-me"}>Catch me</a></li>
                         </ul>
                     </nav>

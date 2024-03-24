@@ -128,8 +128,8 @@ class CatchMeSection1 extends BaseElement {
                 </div>
                 <div class="layout-right">
                     <div class="layout-middle">
-                        <h1 >How To Catch Me</h1>
-                        <p>I was born in a small town near the capital of our homeland, Moscow, in 1974. My mother was a doctor, and my father was a military man. Grandfather was a tailor, and grandmother was a jewelry seller. I lived a happy and cheerful life before I went to school. If you want to know more about me, scroll down</p>
+                        <h1>How To Catch Me?</h1>
+                        <p>I live in a small town near the capital of my homeland, Moscow. My life is boring and worthless. I am ready to help you in your work. You can find me here: Sad area, Dreary district, Sadness city, Disappointment avenue, house 13.</p>
                     </div>
                 </div>
             </div>

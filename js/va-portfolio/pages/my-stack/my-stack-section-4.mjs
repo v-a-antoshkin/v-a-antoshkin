@@ -73,6 +73,7 @@ class MyStackSection4 extends BaseElement {
                 .image-right {
                     width: 100%;
                     padding: 0 20px 0px 20px;
+                    cursor: pointer;
                 }
 
                 .layout-middle {
@@ -155,7 +156,7 @@ class MyStackSection4 extends BaseElement {
                 </div>
                 <div class="layout-right">
                     <div class="image-right-container">
-                        <img class="image-right" src="images/my-stack/site-polyathlon.avif" alt="">
+                        <img class="image-right" src="images/my-stack/site-polyathlon.avif" @click=${() => window.open('https://polyathlon.ru/', '_blank')} title="Show Site" alt="">
                     </div>
                 </div>
             </div>

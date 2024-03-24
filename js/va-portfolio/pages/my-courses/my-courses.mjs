@@ -20,8 +20,8 @@ class MyCourses extends BaseElement {
     render() {
         return html`
             <my-courses-section-1></my-courses-section-1>
-            <my-courses-section-2></my-courses-section-2>
             <my-courses-section-3></my-courses-section-3>
+            <my-courses-section-2></my-courses-section-2>
         `;
     }
 

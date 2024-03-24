@@ -28,6 +28,7 @@ class MyCoursesSection2 extends BaseElement {
                     position: relative;
                     justify-content: center;
                     color: black;
+                    margin: 50px 0;
                 }
 
                 .container {
@@ -186,6 +187,16 @@ class MyCoursesSection2 extends BaseElement {
                 .course-1-9 {
                     background-image: url(images/my-courses/sacod/jpg/bg-9.jpg);
                 }
+                .course-1-10 {
+                    background-image: url(images/my-courses/sacod/jpg/bg-1.jpg);
+                }
+                .course-2,
+                .course-3,
+                .course-4
+                {
+                    background-image: url(images/my-courses/python/jpg/bg-1.jpg);
+                    background-size: contain;
+                }
 
             `
         ]
@@ -221,7 +232,7 @@ class MyCoursesSection2 extends BaseElement {
                         html `
                             <div>
                                 <img loading="lazy" src="images/my-courses/${courses[this.currentCourse].folder}/avif/${index + 1}.avif" alt=""/>
-                                <link-button class=${`course-${this.currentCourse}-${index+1}`} href=${link} @mousedown=${this.mouseDown2} @mouseup=${this.mouseUp2} @mousemove=${this.mouseMove2}>Know More</link-button>
+                                <link-button class=${`course-${this.currentCourse} course-${this.currentCourse}-${index+1}`} href=${link} @mousedown=${this.mouseDown2} @mouseup=${this.mouseUp2} @mousemove=${this.mouseMove2}>Know More</link-button>
                             </div>`
                     )}
                 </figure>

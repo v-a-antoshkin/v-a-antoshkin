@@ -43,7 +43,10 @@ class CatchMeSection2 extends BaseElement {
                     display: flex;
                     position: relative;
                     justify-content: space-between;
+                    flex-direction: column;
+                    align-items: center;
                     width: 100%;
+                    gap: 20px;
                 }
 
                 .layout-right {
@@ -108,11 +111,22 @@ class CatchMeSection2 extends BaseElement {
                     margin: 20px 0 0;
                     font-family: var(--ubuntu-font-family);
                 }
+                h2 {
+                    font-size: 2.8rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    margin: 20px 0 0;
+                    font-family: var(--ubuntu-font-family);
+                }
+
                 p {
                     font-weight: 400;
                     font-size: 1.25rem;
                     line-height: 1.6;
                     word-wrap: break-word;
+                }
+                iframe {
+                    margin: 0 auto;
                 }
             `
         ]
@@ -126,23 +140,8 @@ class CatchMeSection2 extends BaseElement {
     render() {
         return html`
             <div class="container">
+                <h2>Try to find me</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15539.474224670596!2d39.75727491917126!3d54.62237057131561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1701552244449!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        `;
-        return html`
-            <div class="container">
-                <div class="layout-left"></div>
-                <div class="layout-right">
-                    <div class="layout-middle">
-                        <div>
-                            <h5>Innovative programming</h5>
-                            <h1>Reinforcement<br>learning<br>systems</h1>
-                            <p>The future is already here. Аrtificial intelligence never sleeps and never gets bored</p>
-                            <a href="#my-pride">Learn more</a>
-                            <video class="elementor-video" src="https://historytravel.com/wp-content/uploads/2023/02/History-Travel-Launch-Promo-20-FULL-V2-.mp4" autoplay="" controls="" muted="muted" playsinline="" controlslist="nodownload"></video>
-                        </div>
-                    </div>
-                </div>
             </div>
         `;
     }

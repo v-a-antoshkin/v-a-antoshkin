@@ -104,7 +104,7 @@ class MyStackSection1 extends BaseElement {
                 <div class="layout-right">
                     <div class="layout-middle">
                         <h1 >What can I do?</h1>
-                        <p>I know the programming languages C#, Javascript and Python. I work with MySQL, PostgreSQL and CouchDB databases. I use Google's reactive JS-Framework Lit. I know the Linux operating system as a Red Hat engineer</p>
+                        <p>I know the programming languages C#, Javascript, TypeScript, Node.js and Python. I work with MySQL, PostgreSQL and CouchDB databases. I use Google's reactive JS-Framework Lit. I know the Linux operating system as a Red Hat engineer</p>
                     </div>
                 </div>
             </div>

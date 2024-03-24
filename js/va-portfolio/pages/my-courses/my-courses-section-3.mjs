@@ -153,7 +153,7 @@ class MyCoursesSection3 extends BaseElement {
                     font-weight: 300;
                     line-height: 1.2;
                     font-size: 1.25rem;
-                    font-family: var(--ubuntu-font-family);
+                    font-family: sans-serif;
                     margin: 0px;
                 }
 
@@ -162,7 +162,7 @@ class MyCoursesSection3 extends BaseElement {
                     font-weight: 700;
                     text-transform: uppercase;
                     margin: 10px 0px;
-                    font-family: var(--ubuntu-font-family);
+                    font-family: sans-serif;
                 }
 
                 p {
@@ -273,7 +273,7 @@ class MyCoursesSection3 extends BaseElement {
     changeCourse(e) {
         this.currentCourse = e.target.value
     }
-    
+
     firstUpdated() {
         super.firstUpdated();
         const md = window.matchMedia( "(min-width: 920px)" );

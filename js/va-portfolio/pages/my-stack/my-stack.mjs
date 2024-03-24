@@ -3,8 +3,6 @@ import { BaseElement, html} from '../../../base-element.mjs'
 import './my-stack-section-1.mjs';
 import './my-stack-section-2.mjs';
 import './my-stack-section-3.mjs';
-import './my-stack-section-4.mjs';
-import './my-stack-section-5.mjs';
 
 class MyStack extends BaseElement {
     static get properties() {
@@ -25,11 +23,22 @@ class MyStack extends BaseElement {
             <my-stack-section-3></my-stack-section-3>
             <my-stack-section-4></my-stack-section-4>
             <my-stack-section-5></my-stack-section-5>
+            <my-stack-section-6></my-stack-section-6>
         `;
     }
 
+    * lazyLoad() {
+    const lazyPages=['my-stack-section-4', 'my-stack-section-5', 'my-stack-section-6'];
+    for (const pageName of lazyPages) {
+        import(`./${pageName}.mjs`);
+        yield pageName;
+    }
+}
+
     firstUpdated() {
         super.firstUpdated();
+        const lazyIterator = this.lazyLoad();
+        const lazyInterval = setInterval(() => lazyIterator.next().done ? clearInterval(lazyInterval) : '', 1000);
         scrollTo(0, 0);
     }
 }
