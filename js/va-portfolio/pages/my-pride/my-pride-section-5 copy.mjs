@@ -21,83 +21,125 @@ class MyPrideSection5 extends BaseElement {
                     position: relative;
                     justify-content: center;
                     align-items: center;
-                    color: black;
-                }
-
-                * {
                     box-sizing: border-box;
                     -webkit-touch-callout: none;
                     -webkit-user-select: none;
                     -moz-user-select: none;
                     -ms-user-select: none;
                     user-select: none;
+                    color: black;
+                }
+
+                * {
+                    box-sizing: border-box;
                 }
 
                 .container {
-                    position: relative;
                     display: flex;
+                    position: relative;
+                    justify-content: space-between;
                     width: 100%;
-                    gap: 20px;
+                    width: 100%;
                 }
 
                 .layout-left {
                     display: flex;
-                    width: 100%;
-                    justify-content: left;
-                    align-items: center;
-                }
-
-                .layout-right {
-                    display: flex;
-                    width: 100%;
+                    flex-basis: 50%;
+                    position: relative;
                     justify-content: center;
-                    align-items: center;
                 }
 
-                .layout-middle {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    width: 90%;
-                    gap: 20px;
+                .image-left {
+                    position: absolute;
+                    bottom: 0;
+                    object-position: 50% 50%;
+                    object-fit: cover;
+                    width: 212px;
+                    height: 471px;
                 }
 
-                .image-right {
+                .image-right-1 {
+                    object-position: 50% 50%;
+                    object-fit: cover;
                     width: 80%;
                     cursor: pointer;
                 }
 
-                h2 {
-                    margin: 0;
-                    line-height: 1.2;
-                    font-weight: 300;
-                    font-size: 1.25rem;
+                .image-right-2 {
+                    object-position: 50% 50%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    width: 60%;
+                    margin: -50% 0px 0px -50%;
+                    z-index: -1;
+                }
+
+
+                .layout-right {
+                    display: flex;
+                    flex-basis: 50%;
+                    flex-direction: column;
+                    position: relative;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .layout-center {
+
+                }
+
+                .layout-middle {
+                    display: flex;
+                    width: 90%;
+                    flex-direction: column;
+                    justify-content: center;
+                    z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 79px;
+                    max-width: 600px;
+                }
+
+                h4 {
+                    margin: 20px 20px 0;
                     font-family: var(--ubuntu-font-family);
+                    font-weight: 700;
+                    line-height: 1.2;
+                    font-size: 20px;
                 }
 
                 h3 {
-                    margin: 0;
+                    font-size: 3.75rem;
+                    font-weight: 300;
                     line-height: 1.2;
-                    font-size: clamp(1rem, 8vw, 3.75rem);
-                    font-weight: 400;
+                    margin: 25px 0 0;
                     font-family: var(--ubuntu-font-family);
                 }
 
+                h2 {
+                    font-weight: 300;
+                    line-height: 1.2;
+                    font-size: 1.25rem;
+                    font-family: var(--ubuntu-font-family);
+                    margin: 79px 0 0;
+                }
+
                 p {
-                    line-height: 1.6;
                     font-weight: 700;
-                    font-size: clamp(1vw, 3vw, 1.25rem);
+                    font-size: 1.25rem;
+                    // margin: 21px 207px 21px 0;
+                    line-height: 1.6;
                     word-wrap: break-word;
-                    text-align: justify;
                 }
 
                 a {
-                    position: relative;
                     font-style: normal;
                     text-transform: uppercase;
-                    margin: 0 auto 0 0;
+                    margin: 20px auto 0 0;
                     color: #ffffff !important;
-                    background-color: var(--background-green);
+                    background-color: #17cad0 !important;
+                    position: relative;
+                    letter-spacing: 1px;
                     font-size: 1rem;
                     line-height: 1.4;
                     vertical-align: middle;
@@ -107,23 +149,47 @@ class MyPrideSection5 extends BaseElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
-                    font-weight: 600;
-                    &:hover {
-                        background-color: var(--background-green-hover);
+                }
+
+                a:hover {
+                    background-color: #15b6bb !important;
+                }
+
+                .horizontal-line {
+                    width: 120px;
+                    height: 6px;
+                    margin-top: 24px;
+                    background-color: var(--native-background-color);
+                }
+
+                @media (max-width: 1100px) {
+                    .layout-left {
+                        background-position: -400px 100%;
+                        min-height: 800px;
+                    }
+                }
+                @media (max-width: 850px) {
+                    .layout-left {
+                        background-position: -500px 100%;
+                        min-height: 800px;
+                    }
+                }
+                @media (max-width: 700px) {
+                    .layout-left {
+                        background-position: -600px 100%;
+                        min-height: 800px;
                     }
                 }
 
-
-                @media (max-width: 768px) {
-                    .container {
-                        flex-wrap: wrap;
-                        flex-direction: column-reverse;
-                    }
+                @media (max-width: 600px) {
                     .layout-left {
-                        justify-content: center;
+                        background-position: -700px 100%;
+                        min-height: 800px;
                     }
-                    a {
-                        margin: 0 0 0 auto;
+                }
+                @media (max-width: 500px) {
+                    .layout-left {
+                        display: none;
                     }
                 }
             `
@@ -139,7 +205,7 @@ class MyPrideSection5 extends BaseElement {
         return html`
             <div class="container">
                 <div class="layout-right">
-                    <img class="image-right" src="images/my-pride/crazy-birds.avif" title="Watch Code" @click=${() => window.open('https://github.com/neuro-rsu/crazy-birds/blob/main/index.html', '_blank')} alt="">
+                    <img class="image-right-1" src="images/my-pride/crazy-birds.avif" title="Watch Code" @click=${() => window.open('https://github.com/neuro-rsu/crazy-birds/blob/main/index.html', '_blank')} alt="">
                 </div>
                 <div class="layout-left">
                     <div class="layout-middle">

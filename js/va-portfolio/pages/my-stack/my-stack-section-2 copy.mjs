@@ -1,6 +1,6 @@
 import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class HomeSection5 extends BaseElement {
+class MyStackSection2 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -35,22 +35,26 @@ class HomeSection5 extends BaseElement {
                 }
 
                 .container {
-                    position: relative;
                     display: flex;
+                    justify-content: space-between;
                     width: 100%;
-                    gap: 20px;
-                    min-height: 800px;
                 }
 
                 .layout-left {
+                    position: relative;
                     display: flex;
                     flex-basis: 50%;
-                    justify-content: right;
-                    align-items: center;
-                    background-image: url(images/home/bgs5-left.avif);
-                    background-size: 40%;
-                    background-position: 0px 100%;
-                    background-repeat: no-repeat;
+                    justify-content: space-between;
+                    min-height: 800px;
+                }
+
+                .image-left {
+                    position: absolute;
+                    bottom: 0px;
+                    width: 40%;
+                    height: 50%;
+                    object-fit: contain;
+                    object-position: 0% 100%;
                 }
 
                 .layout-right {
@@ -61,89 +65,60 @@ class HomeSection5 extends BaseElement {
                     align-items: center;
                 }
 
-                .image-left {
-                    object-position: 50% 50%;
-                    object-fit: cover;
+                .image-right-container {
+                    line-height: 0;
                     width: 100%;
-                    border-radius: 50%;
-                    padding: 0 0 6% 6%;
                 }
 
-                .image-right-1 {
-                    object-position: 50% 50%;
-                    object-fit: cover;
-                    width: 80%;
-                    border-radius: 50%;
-                }
-
-                .image-right-2 {
-                    object-position: 50% 50%;
-                    object-fit: cover;
-                    border-radius: 50%;
-                    width: 60%;
-                    margin: -50% 0px 0px -50%;
-                    z-index: -1;
-                }
-
-                .image-left-container {
-                    background-image: url("images/home/bgs5.avif");
-                    background-repeat: no-repeat;
-                    background-position: 0% 50%;
-                    background-size: cover;
-                    border-radius: 50%;
-                    flex-basis: fit-content;
-                }
-
-                .image-left-1 {
-                    width: 20%;
-                    height: 50%;
-                    object-fit: contain;
-                    object-position: 0% 100%;
-                    align-self: flex-start;
-                    margin-top: -50%;
-                    z-index: -1;
+                .image-right {
+                    width: 100%;
+                    padding: 0 20px 0px 20px;
                 }
 
                 .layout-middle {
                     display: flex;
+                    position: absolute;
+                    right: 0;
+                    width: 70%;
+                    right: 0;
                     flex-direction: column;
                     justify-content: center;
-                    width: 90%;
-                    margin: 40px 0px;
-                    gap: 20px;
+                    z-index: 1;
+
                 }
 
                 h2 {
-                    margin: 0;
-                    line-height: 1.2;
                     font-weight: 300;
+                    line-height: 1.2;
                     font-size: 1.25rem;
                     font-family: var(--ubuntu-font-family);
+                    margin: 79px 0 0;
                 }
 
                 h3 {
-                    margin: 0;
+                    font-size: 3.75rem;
+                    font-weight: 300;
                     line-height: 1.2;
+                    margin: 25px 0 0;
                     font-family: var(--ubuntu-font-family);
-                    font-size: clamp(1rem, 8vw, 3.75rem);
-                    font-weight: 400;
                 }
 
                 p {
-                    line-height: 1.6;
                     font-weight: 700;
-                    font-size: clamp(1vw, 3vw, 1.25rem);
+                    font-size: 1.25rem;
+
+                    line-height: 1.6;
                     word-wrap: break-word;
-                    max-width: 400px;
                 }
 
                 a {
                     position: relative;
                     font-style: normal;
                     text-transform: uppercase;
-                    margin: 0 0 0 auto;
+                    margin: 20px 0 0 auto;
                     color: #ffffff !important;
-                    background-color: var(--background-green);
+                    background-color: #17cad0 !important;
+                    letter-spacing: 1px;
                     font-size: 1rem;
                     line-height: 1.4;
                     vertical-align: middle;
@@ -153,10 +128,9 @@ class HomeSection5 extends BaseElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
-                    font-weight: 600;
-                    &:hover {
-                        background-color: var(--background-green-hover);
-                    }
+                }
+                a:hover {
+                    background-color: #15b6bb !important;
                 }
             `
         ]
@@ -171,16 +145,17 @@ class HomeSection5 extends BaseElement {
         return html`
             <div class="container">
                 <div class="layout-left">
-                    <div class="image-left-container">
-                        <img class="image-left" src="images/home/robot-2.avif" alt="">
+                    <img class="image-left" src="images/home/bgs2-left.avif" alt="">
+                    <div class="layout-middle">
+                        <h2>I know C#</h2>
+                        <h3>It's all my life</h3>
+                        <p>I started my professional career with Delphi 3 in 1998 and since then I have become a fan of Anders Hellsberg. Learning C# has been the best thing in my life since Borland sold its flagship product to CodeGear in 2006.</p>
+                        <a href="https://github.com/polyathlon/polyathlon/tree/main/Polyathlon">CODE EXAMPLE</a>
                     </div>
                 </div>
                 <div class="layout-right">
-                    <div class="layout-middle">
-                        <h2>My courses</h2>
-                        <h3>I'm a good teacher</h3>
-                        <p>The best way to understand yourself is to explain it to someone else</p>
-                        <a href="#my-courses" title="I'm a teacher">Explain it</a>
+                    <div class="image-right-container">
+                        <img class="image-right" src="images/my-stack/polyathlon.avif" alt="">
                     </div>
                 </div>
             </div>
@@ -200,4 +175,4 @@ class HomeSection5 extends BaseElement {
 
 }
 
-customElements.define("home-section-5", HomeSection5);
+customElements.define("my-stack-section-2", MyStackSection2);

@@ -39,7 +39,7 @@ class AboutMeSection2 extends BaseElement {
                     display: flex;
                     flex-basis: 100%;
                     align-items: stretch;
-                    margin: 40px 0;
+                    margin: 40px 10px;
                 }
 
                 .image-left {
@@ -112,7 +112,6 @@ class AboutMeSection2 extends BaseElement {
 
                 .layout-middle-1 {
                     background-color: var(--nav-item-hover-background-color);
-                    margin: 0px 10px;
                 }
 
                 .layout-middle-2 {
@@ -121,7 +120,7 @@ class AboutMeSection2 extends BaseElement {
 
                 .layout-middle-3 {
                     background-color: var(--background-magenta);
-                    margin: 0px 10px;
+
                 }
                 h4 {
                     margin: 20px 20px 0;
@@ -134,7 +133,7 @@ class AboutMeSection2 extends BaseElement {
                 }
 
                 h2 {
-                    font-size: 4.5rem;
+                    font-size: clamp(1rem, 11vw, 4.5rem);
                     font-weight: 700;
                     font-family: var(--ubuntu-font-family);
                     line-height: 1.2;
@@ -148,13 +147,14 @@ class AboutMeSection2 extends BaseElement {
                     font-family: var(--ubuntu-font-family);
                     line-height: 1.2;
                     overflow-wrap: break-word;
+                    text-align: center;
                 }
 
                 p {
-                    font-size: 1.25rem;
+                    font-size: clamp(0.5rem, 4vw, 1.25rem);
                     line-height: 1.6;
-                    padding: 0px 20px;
-                    word-wrap: break-word;
+                    margin: 0px 10px;
+                    overflow-wrap: anywhere;
                 }
 
                 a {

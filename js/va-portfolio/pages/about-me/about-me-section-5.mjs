@@ -37,7 +37,7 @@ class AboutMeSection5 extends BaseElement {
 
                 .container {
                     width: 100%;
-                    margin-top: 5%;
+                    margin-top: 50px;
                     margin-bottom: 2%;
                 }
 
@@ -177,11 +177,13 @@ class AboutMeSection5 extends BaseElement {
                 }
 
                 h2 {
-                    font-size: 3rem;
+                    font-size: clamp(2rem, 5vw, 4.5rem);
                     font-weight: 700;
+                    font-family: var(--ubuntu-font-family);
+                    overflow-wrap: normal;
                     text-align: center;
-                    margin: 0 65px;
                 }
+
 
                 header {
                     width: 100%;
@@ -197,6 +199,15 @@ class AboutMeSection5 extends BaseElement {
                     font-size: 1.25rem;
                     line-height: 1.6;
                     word-wrap: break-word;
+                }
+                @media screen and (max-width: 640px) {
+                    .container-layout {
+                        flex-wrap: wrap;
+                        gap: 50px;
+                    }
+                    .container-item {
+                        flex-basis: 100%;
+                    }
                 }
             `
         ]

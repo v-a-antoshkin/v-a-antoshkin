@@ -27,7 +27,6 @@ class AboutMeSection6 extends BaseElement {
                     -ms-user-select: none;
                     user-select: none;
                     color: black;
-                    min-height: 600px;
                     background-image: linear-gradient(165deg, var(--background-color-4f4e5b) 0%, black 65%);
                 }
 
@@ -177,11 +176,11 @@ class AboutMeSection6 extends BaseElement {
                 }
 
                 h2 {
-                    font-size: 3rem;
+                    font-size: clamp(1rem, 10vw, 3rem);
                     font-weight: 700;
                     text-align: center;
                     color: white;
-                    margin: 0;
+                    margin: 0px;
                 }
 
                 header {
@@ -198,6 +197,7 @@ class AboutMeSection6 extends BaseElement {
                     line-height: 1.6;
                     word-wrap: break-word;
                 }
+
             `
         ]
     }

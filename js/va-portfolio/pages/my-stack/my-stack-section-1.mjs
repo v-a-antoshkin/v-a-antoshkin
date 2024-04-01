@@ -39,7 +39,7 @@ class MyStackSection1 extends BaseElement {
                 }
 
                 .container {
-                    min-height: 800px;
+                    min-height: 0.9vh;
                     display: flex;
                     width: 100%;
                 }
@@ -72,15 +72,16 @@ class MyStackSection1 extends BaseElement {
                 }
 
                 h1 {
-                    font-size: 3.4375rem;
+                    font-size: clamp(2rem, 5vw, 3.4375rem);
                     font-weight: 700;
                     text-transform: uppercase;
+                    text-align: center;
                     margin: 20px 0 0;
                     font-family: var(--ubuntu-font-family);
                 }
 
                 p {
-                    font-size: 1.25rem;
+                    font-size: clamp(0.5rem, 4vw, 1.25rem);
                     line-height: 1.6;
                     word-wrap: break-word;
                 }
@@ -104,7 +105,7 @@ class MyStackSection1 extends BaseElement {
                 <div class="layout-right">
                     <div class="layout-middle">
                         <h1 >What can I do?</h1>
-                        <p>I know the programming languages C#, Javascript, TypeScript, Node.js and Python. I work with MySQL, PostgreSQL and CouchDB databases. I use Google's reactive JS-Framework Lit. I know the Linux operating system as a Red Hat engineer</p>
+                        <p>I know the programming languages C#, PHP, Javascript, TypeScript, Node.js and Python. I work with MySQL, PostgreSQL and CouchDB databases. I use Google's reactive JS-Framework Lit. I know the Linux operating system as a Red Hat engineer</p>
                     </div>
                 </div>
             </div>

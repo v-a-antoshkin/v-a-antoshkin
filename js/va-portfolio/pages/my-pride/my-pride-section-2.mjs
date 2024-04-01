@@ -21,105 +21,87 @@ class MyPrideSection2 extends BaseElement {
                     position: relative;
                     justify-content: center;
                     align-items: center;
+                    color: black;
+                }
+
+                * {
                     box-sizing: border-box;
                     -webkit-touch-callout: none;
                     -webkit-user-select: none;
                     -moz-user-select: none;
                     -ms-user-select: none;
                     user-select: none;
-                    color: black;
-                }
-
-                * {
-                    box-sizing: border-box;
                 }
 
                 .container {
+                    position: relative;
                     display: flex;
-                    justify-content: space-between;
                     width: 100%;
+                    gap: 20px;
                 }
 
                 .layout-left {
-                    position: relative;
                     display: flex;
-                    flex-basis: 50%;
-                    justify-content: space-between;
-                    min-height: 800px;
-                }
-
-                .image-left {
-                    position: absolute;
-                    bottom: 0px;
-                    width: 40%;
-                    height: 50%;
-                    object-fit: contain;
-                    object-position: 0% 100%;
+                    width: 100%;
+                    justify-content: right;
+                    align-items: center;
+                    background-image: url(images/home/bgs2-left.avif);
+                    background-size: 35%;
+                    background-position: 0 100%;
+                    background-repeat: no-repeat;
                 }
 
                 .layout-right {
                     display: flex;
-                    flex-basis: 50%;
-                    position: relative;
+                    width: 100%;
                     justify-content: center;
                     align-items: center;
                 }
 
-                .image-right-container {
-                    line-height: 0;
-                    width: 100%;
+                .layout-middle {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 70%;
+                    gap: 20px;
                 }
 
                 .image-right {
-                    width: 100%;
-                    padding: 0 20px 0px 20px;
+                    width: 80%;
                     cursor: pointer;
                 }
 
-                .layout-middle {
-                    display: flex;
-                    position: absolute;
-                    right: 0;
-                    width: 70%;
-                    right: 0;
-                    flex-direction: column;
-                    justify-content: center;
-                    z-index: 1;
-
-                }
-
                 h2 {
-                    font-weight: 300;
+                    margin: 0;
                     line-height: 1.2;
+                    font-weight: 300;
                     font-size: 1.25rem;
                     font-family: var(--ubuntu-font-family);
-                    margin: 79px 0 0;
                 }
 
                 h3 {
-                    font-size: 3.75rem;
-                    font-weight: 300;
+                    margin: 0;
                     line-height: 1.2;
-                    margin: 25px 0 0;
+                    font-size: clamp(1rem, 8vw, 3.75rem);
+                    font-weight: 400;
                     font-family: var(--ubuntu-font-family);
                 }
 
                 p {
-                    font-weight: 700;
-                    font-size: 1.25rem;
-
                     line-height: 1.6;
+                    font-weight: 700;
+                    font-size: clamp(1vw, 3vw, 1.25rem);
                     word-wrap: break-word;
+                    text-align: justify;
                 }
 
                 a {
                     position: relative;
                     font-style: normal;
                     text-transform: uppercase;
-                    margin: 20px 0 0 auto;
+                    margin: 0 0 0 auto;
                     color: #ffffff !important;
-                    background-color: #17cad0 !important;
-                    letter-spacing: 1px;
+                    background-color: var(--background-green);
                     font-size: 1rem;
                     line-height: 1.4;
                     vertical-align: middle;
@@ -129,9 +111,20 @@ class MyPrideSection2 extends BaseElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
+                    font-weight: 600;
+                    &:hover {
+                        background-color: var(--background-green-hover);
+                    }
                 }
-                a:hover {
-                    background-color: #15b6bb !important;
+
+
+                @media (max-width: 768px) {
+                    .container {
+                        flex-wrap: wrap;
+                    }
+                    .layout-middle{
+                        margin-right: 20px;
+                    }
                 }
             `
         ]
@@ -146,18 +139,15 @@ class MyPrideSection2 extends BaseElement {
         return html`
             <div class="container">
                 <div class="layout-left">
-                    <img class="image-left" src="images/home/bgs2-left.avif" alt="">
                     <div class="layout-middle">
                         <h2>Neural T-Rex</h2>
                         <h3>Marc Bolan is alive</h3>
                         <p>A lonely dinosaur T-Rex runs through the scorched desert to the music of the legendary rock band founded by Marc Bolan in 1967. Day gives way to night. He encounters huge cacti and scary pterodactyls. How can he survive in these terrible conditions? Artificial intelligence can help him. Watch how a reinforcement neural network learns and you will understand how humanity began.</p>
-                        <a href="https://github.com/neuro-rsu/neuro-dino/blob/main/index.html" target="_blank" title="github">CODE EXAMPLE</a>
+                        <a href="https://neuro-rsu.github.io/neuro-dino" target="_blank" title="Watch T-Rex AI">T-Rex Show</a>
                     </div>
                 </div>
                 <div class="layout-right">
-                    <div class="image-right-container">
-                        <img class="image-right" src="images/my-pride/neuro-dino.avif" title="Watch T-Rex AI" @click=${() => window.open('https://neuro-rsu.github.io/neuro-dino', '_blank')} alt="">
-                    </div>
+                    <img class="image-right" src="images/my-pride/neuro-dino.avif" title="Watch T-Rex Code" @click=${() => window.open('https://github.com/neuro-rsu/neuro-dino/blob/main/index.html', '_blank')} alt="">
                 </div>
             </div>
         `;
@@ -179,3 +169,4 @@ class MyPrideSection2 extends BaseElement {
 customElements.define("my-pride-section-2", MyPrideSection2);
 
 // Одинокий динозавр Т-Рех бежит по выжженной пустыне под музыку легендарной рок группы, основанной Марком Боланом в 1967 году. День сменяется ночью. Ему встречаются огромные кактусы и страшные птеродактили. Как ему выжить в этих страшных условиях? Исскуственный интеллект может помочь ему. Посмотрите как обучается нейронная сеть с подкреплением и вы поймете как зародилось челевечество.
+

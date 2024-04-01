@@ -27,7 +27,6 @@ class AboutMeSection3 extends BaseElement {
                     -ms-user-select: none;
                     user-select: none;
                     color: black;
-                    min-height: 600px;
                     background-image: url(images/about-me/bgs3-bottom.svg), url(images/about-me/bgs3-top.svg);
                     background-position: 100% 100%, 0% 0%;
                     background-size: 40%, 40%;
@@ -132,10 +131,9 @@ class AboutMeSection3 extends BaseElement {
                 }
 
                 h2 {
-                    font-size: 3rem;
+                    font-size: clamp(2rem, 5vw, 3.4375rem);
                     font-weight: 700;
                     text-align: center;
-                    margin: 0 65px;
                 }
 
                 header {
@@ -147,11 +145,13 @@ class AboutMeSection3 extends BaseElement {
                 h2 > span {
                     color: var(--native-background-color);
                 }
+
                 p {
                     font-weight: 400;
-                    font-size: 1.25rem;
+                    font-size: clamp(1rem, 1vw, 1.25rem);
                     line-height: 1.6;
-                    word-wrap: break-word;
+                    overflow-wrap: anywhere;
+                    text-align: center;
                 }
             `
         ]

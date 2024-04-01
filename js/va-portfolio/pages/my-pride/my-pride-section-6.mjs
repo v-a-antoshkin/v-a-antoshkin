@@ -1,6 +1,6 @@
 import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class MyPrideSection4 extends BaseElement {
+class MyPrideSection6 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -21,105 +21,87 @@ class MyPrideSection4 extends BaseElement {
                     position: relative;
                     justify-content: center;
                     align-items: center;
+                    color: black;
+                }
+
+                * {
                     box-sizing: border-box;
                     -webkit-touch-callout: none;
                     -webkit-user-select: none;
                     -moz-user-select: none;
                     -ms-user-select: none;
                     user-select: none;
-                    color: black;
-                }
-
-                * {
-                    box-sizing: border-box;
                 }
 
                 .container {
+                    position: relative;
                     display: flex;
-                    justify-content: space-between;
                     width: 100%;
+                    gap: 20px;
                 }
 
                 .layout-left {
-                    position: relative;
                     display: flex;
-                    flex-basis: 50%;
-                    justify-content: space-between;
-                    min-height: 800px;
-                }
-
-                .image-left {
-                    position: absolute;
-                    bottom: 0px;
-                    width: 40%;
-                    height: 50%;
-                    object-fit: contain;
-                    object-position: 0% 100%;
+                    width: 100%;
+                    justify-content: right;
+                    align-items: center;
+                    background-image: url(images/home/bgs2-left.avif);
+                    background-size: 30%;
+                    background-position: 0 100%;
+                    background-repeat: no-repeat;
                 }
 
                 .layout-right {
                     display: flex;
-                    flex-basis: 50%;
-                    position: relative;
+                    width: 100%;
                     justify-content: center;
                     align-items: center;
                 }
 
-                .image-right-container {
-                    line-height: 0;
-                    width: 100%;
+                .layout-middle {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 70%;
+                    gap: 20px;
                 }
 
                 .image-right {
-                    width: 100%;
-                    padding: 0 20px 0px 20px;
+                    width: 80%;
                     cursor: pointer;
                 }
 
-                .layout-middle {
-                    display: flex;
-                    position: absolute;
-                    right: 0;
-                    width: 70%;
-                    right: 0;
-                    flex-direction: column;
-                    justify-content: center;
-                    z-index: 1;
-
-                }
-
                 h2 {
-                    font-weight: 300;
+                    margin: 0;
                     line-height: 1.2;
+                    font-weight: 300;
                     font-size: 1.25rem;
                     font-family: var(--ubuntu-font-family);
-                    margin: 79px 0 0;
                 }
 
                 h3 {
-                    font-size: 3.75rem;
-                    font-weight: 300;
+                    margin: 0;
                     line-height: 1.2;
-                    margin: 25px 0 0;
+                    font-size: clamp(1rem, 8vw, 3.75rem);
+                    font-weight: 400;
                     font-family: var(--ubuntu-font-family);
                 }
 
                 p {
-                    font-weight: 700;
-                    font-size: 1.25rem;
-
                     line-height: 1.6;
+                    font-weight: 700;
+                    font-size: clamp(1vw, 3vw, 1.25rem);
                     word-wrap: break-word;
+                    text-align: justify;
                 }
 
                 a {
                     position: relative;
                     font-style: normal;
                     text-transform: uppercase;
-                    margin: 20px 0 0 auto;
+                    margin: 0 0 0 auto;
                     color: #ffffff !important;
-                    background-color: #17cad0 !important;
-                    letter-spacing: 1px;
+                    background-color: var(--background-green);
                     font-size: 1rem;
                     line-height: 1.4;
                     vertical-align: middle;
@@ -129,9 +111,20 @@ class MyPrideSection4 extends BaseElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
+                    font-weight: 600;
+                    &:hover {
+                        background-color: var(--background-green-hover);
+                    }
                 }
-                a:hover {
-                    background-color: #15b6bb !important;
+
+
+                @media (max-width: 768px) {
+                    .container {
+                        flex-wrap: wrap;
+                    }
+                    .layout-middle{
+                        margin-right: 20px;
+                    }
                 }
             `
         ]
@@ -146,18 +139,15 @@ class MyPrideSection4 extends BaseElement {
         return html`
             <div class="container">
                 <div class="layout-left">
-                    <img class="image-left" src="images/home/bgs2-left.avif" alt="">
                     <div class="layout-middle">
-                        <h2>Neural Network Market</h2>
-                        <h3>You can buy a neural network</h3>
-                        <p>The first neural network market in Russia will allow developers to train, sell and distribute their neural networks. Open AI is resting.</p>
-                        <a href="https://github.com/neuro-rsu/neuro-bun/blob/main/index.html" target="_blank" title="github">CODE EXAMPLE</a>
+                        <h2>RRL System</h2>
+                        <h3>AI have to study</h3>
+                        <p>Training artificial intelligence is a very long and expensive process. Distributed systems can help speed it up. RRL System is the first platform in Russia for distributed training of neural networks with reinforcement. A system of distributed servers can significantly reduce time and material costs for training artificial intelligence</p>
+                        <a href="https://rrl-system.github.io" target="_blank" title="Watch RRL System">Watch RRL System</a>
                     </div>
                 </div>
                 <div class="layout-right">
-                    <div class="image-right-container">
-                        <img class="image-right" src="images/my-pride/neuro-bun.avif" title="Watch Crazy Bun AI" @click=${() => window.open('https://neuro-rsu.github.io/neuro-bun', '_blank')} alt="">
-                    </div>
+                    j<img class="image-right" src="images/my-pride/rrl-system.jpg" title="RRL System Code" @click=${() => window.open('https://github.com/rrl-system/rrl-system.github.io/blob/main/index.html', '_blank')} alt="">
                 </div>
             </div>
         `;
@@ -176,5 +166,4 @@ class MyPrideSection4 extends BaseElement {
 
 }
 
-customElements.define("my-pride-section-4", MyPrideSection4);
-
+customElements.define("my-pride-section-6", MyPrideSection6);

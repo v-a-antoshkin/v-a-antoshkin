@@ -54,12 +54,14 @@ class HomeSection7 extends BaseElement {
                 .container-layout {
                     display: flex;
                     justify-content: space-between;
+                    gap: 20px;
                 }
 
                 h2 {
                     margin: 0;
                     font-family: var(--ubuntu-font-family);
                     font-weight: 500;
+                    text-align: center;
                     line-height: 1.2;
                     font-size: 2.5rem;
                 }
@@ -75,7 +77,7 @@ class HomeSection7 extends BaseElement {
                 }
 
                 .horizontal-line {
-                    width: 120px;
+                    width: 50%;
                     height: 6px;
                     margin-top: 24px;
                     background-color: var(--native-background-color);

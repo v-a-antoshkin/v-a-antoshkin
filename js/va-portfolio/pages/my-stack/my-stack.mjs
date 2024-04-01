@@ -1,4 +1,4 @@
-import { BaseElement, html} from '../../../base-element.mjs'
+import { BaseElement, html, css} from '../../../base-element.mjs'
 
 import './my-stack-section-1.mjs';
 import './my-stack-section-2.mjs';
@@ -11,6 +11,20 @@ class MyStack extends BaseElement {
         }
     }
 
+    static get styles() {
+        return [
+            css`
+                my-stack-section-1,
+                my-stack-section-2,
+                my-stack-section-3,
+                my-stack-section-4,
+                my-stack-section-5,
+                my-stack-section-6 {
+                    min-height: 90vh;
+                    margin-bottom: 2%;
+                }
+            `]
+    }
     constructor() {
         super();
         this.version = "1.0.0";

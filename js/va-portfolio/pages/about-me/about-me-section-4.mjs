@@ -38,15 +38,14 @@ class AboutMeSection4 extends BaseElement {
 
                 .container {
                     display: flex;
-                    width: 80%
                 }
 
                 .layout-left {
                     display: flex;
                     flex-basis: 100%;
-                    align-items: streach;
-                    margin: 40px 0;
-                    gap: 20px;
+                    align-items: stretch;
+                    margin: 40px 10px;
+                    gap: 10px;
                 }
 
                 .image-left {
@@ -178,20 +177,21 @@ class AboutMeSection4 extends BaseElement {
                 }
 
                 h5 {
-                    font-size: 1.25rem;
+                    font-size: clamp(1rem, 5vw, 1.25rem);
                     font-weight: 700;
                     font-family: var(--ubuntu-font-family);
                     line-height: 1.2;
-                    overflow-wrap: break-word;
+                    overflow-wrap: anywhere;
                     cursor: pointer;
+                    text-align: center;
                 }
 
                 p {
-                    font-size: 1.25rem;
+                    font-size: clamp(0.5rem, 4vw, 1.25rem);
                     line-height: 1.6;
-                    padding: 0px 20px;
-                    overflow-wrap: break-word;
-                    flex: 1;
+                    margin: 0 10px 10px;
+                    overflow-wrap: anywhere;
+                    flex: 1 1 0%;
                 }
 
                 a {

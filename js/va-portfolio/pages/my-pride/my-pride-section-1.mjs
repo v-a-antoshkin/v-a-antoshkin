@@ -103,9 +103,10 @@ class MyPrideSection1 extends BaseElement {
                     max-width: 100%;
                 }
                 h1 {
-                    font-size: 3.4375rem;
+                    font-size: clamp(2rem, 5vw, 3.4375rem);
                     font-weight: 700;
                     text-transform: uppercase;
+                    text-align: center;
                     margin: 20px 0 0;
                     font-family: var(--ubuntu-font-family);
                 }
@@ -113,7 +114,8 @@ class MyPrideSection1 extends BaseElement {
                     font-weight: 400;
                     font-size: 1.25rem;
                     line-height: 1.6;
-                    word-wrap: break-word;
+                    word-break: break-word;
+                    text-align: justify;
                 }
             `
         ]

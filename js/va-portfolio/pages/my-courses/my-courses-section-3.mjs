@@ -158,11 +158,12 @@ class MyCoursesSection3 extends BaseElement {
                 }
 
                 h1 {
-                    font-size: 2rem;
+                    font-size: clamp(1rem, 2rem, 7vw);
                     font-weight: 700;
                     text-transform: uppercase;
                     margin: 10px 0px;
                     font-family: sans-serif;
+                    word-break: keep-all;
                 }
 
                 p {

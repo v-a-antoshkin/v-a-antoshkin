@@ -35,27 +35,23 @@ class HomeSection2 extends BaseElement {
                 }
 
                 .container {
-                    display: flex;
                     position: relative;
-                    justify-content: space-between;
+                    display: flex;
                     width: 100%;
-                }
-
-                .layout-left {
-                    display: flex;
-                    flex-basis: 50%;
-                    position: relative;
-                    justify-content: space-between;
+                    gap: 20px;
                     min-height: 800px;
                 }
 
-                .image-left {
-                    position: absolute;
-                    bottom: 0px;
-                    width: 40%;
-                    height: 50%;
-                    object-fit: contain;
-                    object-position: 0% 100%;
+                .layout-left {
+                    position: relative;
+                    display: flex;
+                    flex-basis: 50%;
+                    justify-content: right;
+                    align-items: center;
+                    background-image: url(images/home/bgs2-left.avif);
+                    background-size: 40%;
+                    background-position: 0 100%;
+                    background-repeat: no-repeat;
                 }
 
                 .image-right-container {
@@ -63,7 +59,6 @@ class HomeSection2 extends BaseElement {
                     background-repeat: no-repeat;
                     background-position: 0% 50%;
                     background-size: cover;
-                    border-radius: 50%;
                     border-radius: 50%;
                     flex-basis: fit-content;
                 }
@@ -81,55 +76,38 @@ class HomeSection2 extends BaseElement {
                     object-fit: cover;
                     width: 100%;
                     border-radius: 50%;
-                    // padding: 30px 40px 40px 25px;
                     padding: 27px 36px 36px 20px;
-                }
-
-                .layout-center {
-
                 }
 
                 .layout-middle {
                     display: flex;
-                    position: absolute;
-                    right: 0;
-                    width: 70%;
-                    right: 0;
                     flex-direction: column;
                     justify-content: center;
-                    z-index: 1;
-
-                }
-
-                h4 {
-                    margin: 20px 20px 0;
-                    font-family: var(--ubuntu-font-family);
-                    font-weight: 700;
-                    line-height: 1.2;
-                    font-size: 20px;
+                    width: 70%;
+                    margin: 40px 0;
+                    gap: 20px;
                 }
 
                 h2 {
-                    font-weight: 300;
+                    margin: 0;
                     line-height: 1.2;
+                    font-weight: 300;
                     font-size: 1.25rem;
                     font-family: var(--ubuntu-font-family);
-                    margin: 79px 0 0;
                 }
 
                 h3 {
-                    font-size: 3.75rem;
-                    font-weight: 300;
+                    margin: 0;
                     line-height: 1.2;
-                    margin: 25px 0 0;
+                    font-size: clamp(1rem, 8vw, 3.75rem);
+                    font-weight: 400;
                     font-family: var(--ubuntu-font-family);
                 }
 
                 p {
-                    font-weight: 700;
-                    font-size: 1.25rem;
-                    // margin: 21px 207px 21px 0;
                     line-height: 1.6;
+                    font-weight: 700;
+                    font-size: clamp(1vw, 3vw, 1.25rem);
                     word-wrap: break-word;
                 }
 
@@ -137,10 +115,9 @@ class HomeSection2 extends BaseElement {
                     position: relative;
                     font-style: normal;
                     text-transform: uppercase;
-                    margin: 20px 0 0 auto;
+                    margin: 0 0 0 auto;
                     color: #ffffff !important;
                     background-color: var(--background-green);
-                    letter-spacing: 1px;
                     font-size: 1rem;
                     line-height: 1.4;
                     vertical-align: middle;
@@ -163,37 +140,6 @@ class HomeSection2 extends BaseElement {
                     margin-top: 24px;
                     background-color: var(--native-background-color);
                 }
-
-                @media (max-width: 1100px) {
-                    .layout-left {
-                        background-position: -400px 100%;
-                        min-height: 800px;
-                    }
-                }
-                @media (max-width: 850px) {
-                    .layout-left {
-                        background-position: -500px 100%;
-                        min-height: 800px;
-                    }
-                }
-                @media (max-width: 700px) {
-                    .layout-left {
-                        background-position: -600px 100%;
-                        min-height: 800px;
-                    }
-                }
-
-                @media (max-width: 600px) {
-                    .layout-left {
-                        background-position: -700px 100%;
-                        min-height: 800px;
-                    }
-                }
-                @media (max-width: 500px) {
-                    .layout-left {
-                        display: none;
-                    }
-                }
             `
         ]
     }
@@ -207,7 +153,6 @@ class HomeSection2 extends BaseElement {
         return html`
             <div class="container">
                 <div class="layout-left">
-                    <img class="image-left" src="images/home/bgs2-left.avif" alt="">
                     <div class="layout-middle">
                         <h2>About me</h2>
                         <h3>I'm not<br>a Robot</h3>
@@ -238,3 +183,34 @@ class HomeSection2 extends BaseElement {
 }
 
 customElements.define("home-section-2", HomeSection2);
+
+// @media (max-width: 1100px) {
+//     .layout-left {
+//         background-position: -400px 100%;
+//         min-height: 800px;
+//     }
+// }
+// @media (max-width: 850px) {
+//     .layout-left {
+//         background-position: -500px 100%;
+//         min-height: 800px;
+//     }
+// }
+// @media (max-width: 700px) {
+//     .layout-left {
+//         background-position: -600px 100%;
+//         min-height: 800px;
+//     }
+// }
+
+// @media (max-width: 600px) {
+//     .layout-left {
+//         background-position: -700px 100%;
+//         min-height: 800px;
+//     }
+// }
+// @media (max-width: 500px) {
+//     .layout-left {
+//         display: none;
+//     }
+// }

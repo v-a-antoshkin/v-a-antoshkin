@@ -46,6 +46,7 @@ class AboutMeSection8 extends BaseElement {
                     background-position: 0% 50%, 100% 50%;
                     background-size: contain;
                     background-repeat: no-repeat;
+                    overflow: hidden;
                 }
 
                 .container-layout {
@@ -80,10 +81,10 @@ class AboutMeSection8 extends BaseElement {
                 }
 
                 address {
-                    font-size: 2.5rem;
+                    font-size: clamp(1rem, 5vw, 2.5rem);
                     font-weight: 700;
                     margin: 0;
-                    word-wrap: break-word;
+                    word-wrap: anywhere;
                     text-align: center;
                     font-family: var(--ubuntu-font-family);
                     font-style: normal;

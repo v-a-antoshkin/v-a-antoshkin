@@ -1,6 +1,6 @@
 import { BaseElement, html, css } from '../../../base-element.mjs'
 
-class HomeSection1 extends BaseElement {
+class MyStackSection3 extends BaseElement {
     static get properties() {
         return {
             isShow: { type: Boolean, default: false },
@@ -39,40 +39,65 @@ class HomeSection1 extends BaseElement {
                     position: relative;
                     justify-content: space-between;
                     width: 100%;
+                    width: 100%;
                 }
 
                 .layout-left {
                     display: flex;
                     flex-basis: 50%;
                     position: relative;
-                    justify-content: space-between;
-                    background-image: url(images/home/robot-head.avif);
-                    background-repeat: no-repeat;
-                    background-position: calc(100% - 90px) 100%;
-                    min-height: 800px;
-                    width: 50%;
+                    justify-content: center;
                 }
+
+                .image-left {
+                    position: absolute;
+                    bottom: 0;
+                    object-position: 50% 50%;
+                    object-fit: cover;
+                    width: 212px;
+                    height: 471px;
+                }
+
+                .image-right-1 {
+                    object-position: 50% 50%;
+                    object-fit: cover;
+                    width: 80%;
+                    cursor: pointer;
+                }
+
+                .image-right-2 {
+                    object-position: 50% 50%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    width: 60%;
+                    margin: -50% 0px 0px -50%;
+                    z-index: -1;
+                }
+
 
                 .layout-right {
                     display: flex;
                     flex-basis: 50%;
+                    flex-direction: column;
                     position: relative;
-                    justify-content: space-between;
+                    justify-content: center;
                     align-items: center;
-                    min-height: 800px;
-                    background-image: url(images/home/bgs1.avif);
-                    background-repeat: no-repeat;
-                    background-position: 0% 50%;
-                    background-size: cover;
-                    width: 50%;
+                }
+
+                .layout-center {
+
                 }
 
                 .layout-middle {
                     display: flex;
-                    margin-left: -70px;
+                    width: 90%;
                     flex-direction: column;
-                    width: calc(100% + 70px);
-                    overflow: hidden;
+                    justify-content: center;
+                    z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 79px;
+                    max-width: 600px;
                 }
 
                 h4 {
@@ -83,11 +108,11 @@ class HomeSection1 extends BaseElement {
                     font-size: 20px;
                 }
 
-                h1 {
-                    font-size: clamp(1rem, 6.5vw, 55px);
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    margin: 20px 0 0;
+                h3 {
+                    font-size: 3.75rem;
+                    font-weight: 300;
+                    line-height: 1.2;
+                    margin: 25px 0 0;
                     font-family: var(--ubuntu-font-family);
                 }
 
@@ -96,23 +121,23 @@ class HomeSection1 extends BaseElement {
                     line-height: 1.2;
                     font-size: 1.25rem;
                     font-family: var(--ubuntu-font-family);
+                    margin: 79px 0 0;
                 }
 
                 p {
-                    font-weight: 400;
+                    font-weight: 700;
                     font-size: 1.25rem;
+                    // margin: 21px 207px 21px 0;
                     line-height: 1.6;
-                    word-break: break-word;
-                    width: 60%;
+                    word-wrap: break-word;
                 }
 
                 a {
-                    display: inline-block;
                     font-style: normal;
                     text-transform: uppercase;
                     margin: 20px auto 0 0;
                     color: #ffffff !important;
-                    background-color: var(--background-green);
+                    background-color: #17cad0 !important;
                     position: relative;
                     letter-spacing: 1px;
                     font-size: 1rem;
@@ -124,11 +149,10 @@ class HomeSection1 extends BaseElement {
                     user-select: none;
                     padding: 10px 30px;
                     border-radius: 0;
-                    font-weight: 600;
                 }
 
                 a:hover {
-                    background-color: var(--background-green-hover);
+                    background-color: #15b6bb !important;
                 }
 
                 .horizontal-line {
@@ -138,6 +162,36 @@ class HomeSection1 extends BaseElement {
                     background-color: var(--native-background-color);
                 }
 
+                @media (max-width: 1100px) {
+                    .layout-left {
+                        background-position: -400px 100%;
+                        min-height: 800px;
+                    }
+                }
+                @media (max-width: 850px) {
+                    .layout-left {
+                        background-position: -500px 100%;
+                        min-height: 800px;
+                    }
+                }
+                @media (max-width: 700px) {
+                    .layout-left {
+                        background-position: -600px 100%;
+                        min-height: 800px;
+                    }
+                }
+
+                @media (max-width: 600px) {
+                    .layout-left {
+                        background-position: -700px 100%;
+                        min-height: 800px;
+                    }
+                }
+                @media (max-width: 500px) {
+                    .layout-left {
+                        display: none;
+                    }
+                }
             `
         ]
     }
@@ -150,13 +204,15 @@ class HomeSection1 extends BaseElement {
     render() {
         return html`
             <div class="container">
-                <div class="layout-left"></div>
                 <div class="layout-right">
+                    <img class="image-right-1" src="images/my-stack/chess-game.avif" @click=${() => window.open('https://neuro-rsu.github.io/neuro-chess/', '_blank')} title="Try To Play" alt="">
+                </div>
+                <div class="layout-left">
                     <div class="layout-middle">
-                        <h2>Innovative programming</h2>
-                        <h1>Reinforcement<br>learning<br>systems</h1>
-                        <p>The future is already here. Аrtificial intelligence never sleeps and never gets bored</p>
-                        <a href="#my-pride">Learn more</a>
+                        <h2>I know JS</h2>
+                        <h3>ECMA-262 must live</h3>
+                        <p>I believe that Javascript is the best programming language because it can benefit all the people on earth. It is difficult to understand and study, but when you do it, you will become the happiest people in the whole world. I hope to meet the world chess champion Ding Liren someday</p>
+                        <a href="https://github.com/neuro-rsu/neuro-chess/blob/main/index.html" title="robots" target="_blank">KNOW MORE</a>
                     </div>
                 </div>
             </div>
@@ -176,36 +232,4 @@ class HomeSection1 extends BaseElement {
 
 }
 
-customElements.define("home-section-1", HomeSection1);
-
-
-// @media (max-width: 1100px) {
-//     .layout-left {
-//         background-position: -400px 100%;
-//         min-height: 800px;
-//     }
-// }
-// @media (max-width: 850px) {
-//     .layout-left {
-//         background-position: -500px 100%;
-//         min-height: 800px;
-//     }
-// }
-// @media (max-width: 700px) {
-//     .layout-left {
-//         background-position: -600px 100%;
-//         min-height: 800px;
-//     }
-// }
-
-// @media (max-width: 600px) {
-//     .layout-left {
-//         background-position: -700px 100%;
-//         min-height: 800px;
-//     }
-// }
-// @media (max-width: 500px) {
-//     .layout-left {
-//         display: none;
-//     }
-// }
+customElements.define("my-stack-section-3", MyStackSection3);

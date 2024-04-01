@@ -37,118 +37,53 @@ class HomeSection4 extends BaseElement {
                 .container {
                     display: flex;
                     width: 100%;
+                    padding: 5% 0 15%;
                     background-image: url(images/home/bgs4.avif);
                     background-size: 10%;
                     background-repeat: no-repeat;
-                    padding: 5% 0 15%;
                     background-position: 100% 100%;
                 }
 
                 .layout-left {
                     display: flex;
                     flex-basis: 100%;
-                    align-items: flex-start;
-                    margin: 40px 0;
+                    flex-wrap: nowrap;
+                    align-items: start;
+                    justify-content: center;
+                    gap: 20px;
                 }
 
-                .image-left {
-                    position: absolute;
-                    bottom: 0;
-                    object-position: 50% 50%;
-                    object-fit: cover;
-                    width: 212px;
-                    height: 471px;
+                @media (max-width: 500px) {
+                    .layout-left {
+                        flex-wrap: wrap;
+                    }
                 }
 
-                .image-right-container {
-                    // background-image: url(images/cellbg2.jpg);
-                    // background-repeat: no-repeat;
-                    // background-position: 0% 50%;
-                    // background-size: cover;
-                    // border-radius: 50%;
+                .layout-middle {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
                 }
-
 
                 .image-right-1 {
                     width: 40%;
                     background-color: var(--background-green);
                     padding: 3%;
                     border-radius: 50%;
-                }
-
-                .layout-middle-right {
-                    display: block;
-                    width: 90%;
-                    margin: auto;
-                }
-
-                .image-right-2 {
-                    object-position: 50% 50%;
-                    object-fit: cover;
-                    border-radius: 50%;
-                    width: 40%;
-                    margin: -30% 0px 0px -50%;
-                    z-index: 1;
+                    aspect-ratio: 1 / 1;
                 }
 
                 .js {
                     border-radius: 0%;
                 }
-                .image-right-4 {
-                    margin: -50% 0px 0px -50%;
-                    border-radius: 50%;
-                    padding: 20px;
-                    background-color: var(--background-green);
-                    z-index: 1;
-                }
-
-
-
-                .image-right-3 {
-                    object-position: 50% 50%;
-                    object-fit: cover;
-                    width: 25%;
-                    border-radius: 50%;
-                    margin: -30% 0px 0px -50%;
-                    z-index: 2;
-                }
-
-                .layout-right {
-                    display: flex;
-                    flex-basis: 50%;
-                    flex-direction: column;
-                    position: relative;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .layout-center {
-
-                }
-
-                .layout-middle {
-                    display: flex;
-                    flex-direction: column;
-                    flex-basis: calc(100% / 3);
-                    align-items: center;
-                }
-
-                h4 {
-                    margin: 20px 20px 0;
-                    font-family: var(--ubuntu-font-family);
-                    font-weight: 700;
-                    line-height: 1.2;
-                    font-size: 20px;
-                    overflow-wrap: break-word;
-                }
-
                 h2 {
-                    font-size: 3.75rem;
-                    font-weight: 300;
+                    font-size: clamp(1rem, 5vw, 3.75rem);
+                    font-weight: 600;
                     line-height: 1.2;
-                    margin: 25px 0 0;
+                    margin: 25px 0px 0px;
                     font-family: var(--ubuntu-font-family);
-                    overflow-wrap: anywhere;
+                    overflow-wrap: normal;
                 }
 
                 h3 {
@@ -162,11 +97,13 @@ class HomeSection4 extends BaseElement {
 
                 p {
                     font-weight: 700;
-                    font-size: 1.25rem;
-                    // margin: 21px 207px 21px 0;
                     line-height: 1.6;
-                    word-wrap: break-word;
+                    word-break: break-word;
+                    text-align: center;
                     overflow-wrap: break-word;
+                    font-size: clamp(1vw, 3vw, 1.25rem);
+                    margin-left: 5px;
+                    margin-right: 5px;
                 }
 
                 a {
@@ -187,17 +124,9 @@ class HomeSection4 extends BaseElement {
                     padding: 10px 30px;
                     border-radius: 0;
                     font-weight: 600;
-                }
-
-                a:hover {
-                    background-color: var(--background-green-hover);
-                }
-
-                .horizontal-line {
-                    width: 120px;
-                    height: 6px;
-                    margin-top: 24px;
-                    background-color: var(--native-background-color);
+                    &:hover {
+                        background-color: var(--background-green-hover);
+                    }
                 }
             `
         ]

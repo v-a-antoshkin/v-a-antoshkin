@@ -30,7 +30,6 @@ class AboutMeSection1 extends BaseElement {
                     color: black;
                     background-image: url(images/about-me/bgs1-bottom.svg), url(images/about-me/bgs1-top.svg);
                     background-position: 0% 100%, 90% 0%;
-                    min-height: 600px;
                     background-repeat: no-repeat;
                     background-size: 100%, 50%;
                 }
@@ -51,7 +50,6 @@ class AboutMeSection1 extends BaseElement {
                     flex-basis: 50%;
                     position: relative;
                     justify-content: space-between;
-                    min-height: 800px;
                 }
 
                 .layout-left {
@@ -67,7 +65,7 @@ class AboutMeSection1 extends BaseElement {
                     object-fit: cover;
                     width: 100%;
                 }
-                
+
                 .image-left-container {
                     flex-basis: fit-content;
                 }
@@ -102,15 +100,16 @@ class AboutMeSection1 extends BaseElement {
                     max-width: 100%;
                 }
                 h1 {
-                    font-size: 3.4375rem;
+                    font-size: clamp(2rem, 5vw, 3.4375rem);
                     font-weight: 700;
                     text-transform: uppercase;
+                    text-align: center;
                     margin: 20px 0 0;
                     font-family: var(--ubuntu-font-family);
                 }
                 p {
                     font-weight: 400;
-                    font-size: 1.25rem;
+                    font-size: clamp(0.5rem, 4vw, 1.25rem);
                     line-height: 1.6;
                     word-wrap: break-word;
                 }

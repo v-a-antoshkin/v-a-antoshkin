@@ -141,10 +141,10 @@ customElements.define('link-button', class LinkButton extends BaseElement {
                     text-transform: uppercase;
                     text-align: center;
                     letter-spacing: 1px;
-                    font-size: 1rem;
+                    font-size: font-size: clamp(0.15rem, 1rem, 2.4vw);
                     text-decoration: none;
                     white-space: nowrap;
-                    padding: 10px 30px;
+                    padding: 10px 0;
                     font-weight: 600;
                     color: var(--native-color, white);
                     &:hover {

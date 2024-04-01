@@ -35,35 +35,36 @@ class HomeSection6 extends BaseElement {
                 }
 
                 .container {
-                    display: flex;
                     position: relative;
-                    justify-content: space-between;
+                    display: flex;
                     width: 100%;
-                    margin-bottom: 3%;
+                    gap: 20px;
+                    min-height: 800px;
                 }
 
                 .layout-left {
                     display: flex;
                     flex-basis: 50%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .layout-middle {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 90%;
+                    margin: 40px 0px;
+                    gap: 20px;
+                }
+
+                .layout-right {
+                    display: flex;
+                    flex-basis: 50%;
+                    flex-direction: column;
                     position: relative;
                     justify-content: center;
-                }
-
-                .image-left {
-                    position: absolute;
-                    bottom: 0;
-                    object-position: 50% 50%;
-                    object-fit: cover;
-                    width: 212px;
-                    height: 471px;
-                }
-
-                .image-right-container {
-                    // background-image: url(images/cellbg2.jpg);
-                    // background-repeat: no-repeat;
-                    // background-position: 0% 50%;
-                    // background-size: cover;
-                    // border-radius: 50%;
+                    align-items: center;
                 }
 
                 .image-right-1 {
@@ -73,26 +74,12 @@ class HomeSection6 extends BaseElement {
                     border-radius: 50%;
                 }
 
-                .layout-middle-right {
-                    display: block;
-                    width: 90%;
-                    margin: auto;
-                }
-
                 .image-right-2 {
                     object-position: 50% 50%;
                     object-fit: cover;
                     border-radius: 50%;
                     width: 40%;
                     margin: -30% 0px 0px -50%;
-                    z-index: 1;
-                }
-
-                .image-right-4 {
-                    margin: -50% 0px 0px -50%;
-                    border-radius: 50%;
-                    padding: 20px;
-                    background-color: var(--background-green);
                     z-index: 1;
                 }
 
@@ -105,61 +92,29 @@ class HomeSection6 extends BaseElement {
                     z-index: 2;
                 }
 
-                .layout-right {
-                    display: flex;
-                    flex-basis: 50%;
-                    flex-direction: column;
-                    position: relative;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .layout-center {
-
-                }
-
-                .layout-middle {
-                    display: flex;
-                    width: 90%;
-                    flex-direction: column;
-                    justify-content: center;
-                    z-index: 1;
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 79px;
-                    max-width: 600px;
-                }
-
-                h4 {
-                    margin: 20px 20px 0;
-                    font-family: var(--ubuntu-font-family);
-                    font-weight: 700;
+                h2 {
+                    margin: 0px;
                     line-height: 1.2;
-                    font-size: 20px;
+                    font-weight: 300;
+                    font-size: 1.25rem;
+                    font-family: var(--ubuntu-font-family);
                 }
 
                 h3 {
-                    font-size: 3.75rem;
-                    font-weight: 300;
+                    margin: 0px;
                     line-height: 1.2;
-                    margin: 25px 0 0;
                     font-family: var(--ubuntu-font-family);
-                }
-
-                h2 {
-                    font-weight: 300;
-                    line-height: 1.2;
-                    font-size: 1.25rem;
-                    font-family: var(--ubuntu-font-family);
-                    margin: 79px 0 0;
+                    font-size: clamp(1rem, 8vw, 3.75rem);
+                    font-weight: 400;
                 }
 
                 p {
-                    font-weight: 700;
-                    font-size: 1.25rem;
-                    // margin: 21px 207px 21px 0;
                     line-height: 1.6;
-                    word-wrap: break-word;
+                    font-weight: 700;
+                    font-size: clamp(1vw, 3vw, 1.25rem);
+                    overflow-wrap: break-word;
+                    max-width: 400px;
+                    text-align: justify;
                 }
 
                 a {
@@ -180,18 +135,10 @@ class HomeSection6 extends BaseElement {
                     padding: 10px 30px;
                     border-radius: 0;
                     font-weight: 600;
-                }
+                    &:hover {
+                        background-color: var(--background-green-hover);
 
-                a:hover {
-                    background-color: var(--background-green-hover);
-
-                }
-
-                .horizontal-line {
-                    width: 120px;
-                    height: 6px;
-                    margin-top: 24px;
-                    background-color: var(--native-background-color);
+                    }
                 }
             `
         ]
@@ -236,3 +183,26 @@ class HomeSection6 extends BaseElement {
 }
 
 customElements.define("home-section-6", HomeSection6);
+
+
+
+// .layout-center {
+
+// }
+
+// .layout-middle {
+//     display: flex;
+//     width: 90%;
+//     flex-direction: column;
+//     justify-content: center;
+//     z-index: 1;
+//     display: flex;
+//     flex-direction: column;
+//     margin-bottom: 79px;
+//     max-width: 600px;
+// }
+
+// h4 {
+//     margin: 20px 20px 0;
+//     font-family: var(--ubuntu-font-family);
+//     font-weight: 700;

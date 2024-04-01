@@ -35,18 +35,18 @@ class HomeSection3 extends BaseElement {
                 }
 
                 .container {
-                    display: flex;
                     position: relative;
-                    justify-content: space-between;
+                    display: flex;
                     width: 100%;
-                    width: 100%;
+                    gap: 20px;
+                    min-height: 800px;
                 }
 
                 .layout-left {
                     display: flex;
                     flex-basis: 50%;
-                    position: relative;
                     justify-content: center;
+                    align-items: center;
                 }
 
                 .image-left {
@@ -87,56 +87,39 @@ class HomeSection3 extends BaseElement {
                     display: flex;
                     flex-basis: 50%;
                     flex-direction: column;
-                    position: relative;
                     justify-content: center;
                     align-items: center;
                 }
 
-                .layout-center {
-
-                }
-
                 .layout-middle {
                     display: flex;
-                    width: 90%;
                     flex-direction: column;
                     justify-content: center;
-                    z-index: 1;
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 79px;
-                    max-width: 600px;
-                }
-
-                h4 {
-                    margin: 20px 20px 0;
-                    font-family: var(--ubuntu-font-family);
-                    font-weight: 700;
-                    line-height: 1.2;
-                    font-size: 20px;
-                }
-
-                h3 {
-                    font-size: 3.75rem;
-                    font-weight: 300;
-                    line-height: 1.2;
-                    margin: 25px 0 0;
-                    font-family: var(--ubuntu-font-family);
+                    width: 90%;
+                    margin: 40px 0px;
+                    gap: 20px;
                 }
 
                 h2 {
-                    font-weight: 300;
+                    margin: 0;
                     line-height: 1.2;
-                    font-size: 1.25rem;
                     font-family: var(--ubuntu-font-family);
-                    margin: 79px 0 0;
+                    font-size: 1.25rem;
+                    font-weight: 300;
+                }
+
+                h3 {
+                    margin: 0;
+                    line-height: 1.2;
+                    font-family: var(--ubuntu-font-family);
+                    font-size: clamp(1rem, 8vw, 3.75rem);
+                    font-weight: 400;
                 }
 
                 p {
-                    font-weight: 700;
-                    font-size: 1.25rem;
-                    // margin: 21px 207px 21px 0;
                     line-height: 1.6;
+                    font-weight: 700;
+                    font-size: clamp(1vw, 3vw, 1.25rem);
                     word-wrap: break-word;
                 }
 
@@ -147,8 +130,6 @@ class HomeSection3 extends BaseElement {
                     color: #ffffff !important;
                     background-color: var(--background-green);
                     position: relative;
-                    letter-spacing: 1px;
-                    font-size: 1rem;
                     line-height: 1.4;
                     vertical-align: middle;
                     text-align: center;
@@ -169,37 +150,6 @@ class HomeSection3 extends BaseElement {
                     height: 6px;
                     margin-top: 24px;
                     background-color: var(--native-background-color);
-                }
-
-                @media (max-width: 1100px) {
-                    .layout-left {
-                        background-position: -400px 100%;
-                        min-height: 800px;
-                    }
-                }
-                @media (max-width: 850px) {
-                    .layout-left {
-                        background-position: -500px 100%;
-                        min-height: 800px;
-                    }
-                }
-                @media (max-width: 700px) {
-                    .layout-left {
-                        background-position: -600px 100%;
-                        min-height: 800px;
-                    }
-                }
-
-                @media (max-width: 600px) {
-                    .layout-left {
-                        background-position: -700px 100%;
-                        min-height: 800px;
-                    }
-                }
-                @media (max-width: 500px) {
-                    .layout-left {
-                        display: none;
-                    }
                 }
             `
         ]

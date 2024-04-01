@@ -96,12 +96,13 @@ class MyCoursesSection1 extends BaseElement {
                 }
 
                 h1 {
-                    font-size: 2rem;
+                    font-size: clamp(1rem, 2rem, 10vw);
                     font-weight: 700;
                     text-transform: uppercase;
-                    margin: 10px 0;
+                    margin: 10px 0px;
                     font-family: var(--ubuntu-font-family);
                 }
+
                 h2 {
                     font-weight: 300;
                     line-height: 1.2;
@@ -109,6 +110,7 @@ class MyCoursesSection1 extends BaseElement {
                     font-family: var(--ubuntu-font-family);
                     margin: 0;
                 }
+                
                 p {
                     font-weight: 400;
                     font-size: 1.25rem;

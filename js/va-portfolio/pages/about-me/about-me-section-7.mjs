@@ -44,6 +44,8 @@ class AboutMeSection7 extends BaseElement {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
+                    width: 100%;
+                    overflow: hidden;
                 }
                 header {
                     display: flex;
@@ -53,9 +55,9 @@ class AboutMeSection7 extends BaseElement {
                 h2 {
                     font-size: 3rem;
                     font-weight: 700;
-                    padding: 20px;
                     margin: 0px;
                     background-color: var(--native-background-color);
+                    text-align: center;
                 }
                 .image {
                     height: 70px;
